@@ -31,10 +31,12 @@ lxxdev@qq.com | 130 530 55531 | 1997-08-16
 #### Shopping Catalog Team *(Jun 2024 – Present)*
 
 **Price Accuracy** *(2025 – Present)*
-- Optimized troubleshooting pipeline: **5x speed improvement**, near-zero failure rate (previously 10+ hrs runtime, single-failure-kills-all); extracted core API calls to Function App with retry logic
-- Built product price tracking baseline via random sampling; fixed cart extraction and PDP source issues; proposed improvements for Copilot and Edge PT accuracy
-- Integrated Keepa hourly dump to improve Amazon price timeliness for downstream consumers
-- Analyzed IndexNow + IndexProbe + Wrapstar data to extract product/price signals from web index
+- Designed and drove **multi-source price data governance framework**: defined source onboarding criteria (coverage lift, pollution rate, efficiency score), built shadow evaluation pipeline, and established go/no-go decision process for new price sources
+- Proposed and aligned on **1% tolerance standard** (`max($0.10, Price × 1%)`) as the new accuracy measurement baseline; expected to improve Amazon measured accuracy by **+10pp** by eliminating false positives
+- Built **3-layer accuracy dashboard** (global overview → domain drill-down → shadow onboarding tracker) with blame analysis to attribute price errors to specific sources (Organic Merchant, SFS, CSS Selector, etc.), enabling data-driven prioritization
+- Redesigned sampling strategy and blocked problematic domains (e.g. instacart, kinguin) to improve measurement reliability
+- Optimized troubleshooting pipeline: **5x speed improvement**, near-zero failure rate (previously 10+ hrs, single-failure-kills-all); migrated to PME for data source security
+- Integrated Keepa hourly dump to address Amazon price timeliness; integrated IndexNow + IndexProbe + Wrapstar for web index price signals
 - Built Cosmos VC utilization dashboard (daily scraping → Data Explorer → dashboard) serving the entire Shopping org
 
 **Catalog Expansion** *(2024 – 2025)*
