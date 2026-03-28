@@ -18,6 +18,7 @@ personal/
         ├── sources.yaml       # 订阅源配置
         ├── sync-feeds.py      # 同步 sources → feed CLI DB
         └── feed-to-inbox.py   # 拉取 entries → inbox/<source>/
+        └── fetch-url.py       # 单篇 URL 抓取（Jina Reader）
 ```
 
 ## Feed Ingestion
@@ -34,6 +35,19 @@ python3 scripts/ingest/feed-to-inbox.py --dry-run --hours 48
 ```
 
 依赖：`pyyaml`，`feed` CLI（Go）
+
+## URL Fetch + Translate
+
+```bash
+# Claude Code skill（推荐）：抓取 + 自动翻译
+/fetch-url <url> --source SOURCE --tags tag1,tag2
+
+# 仅抓取原文（不翻译）
+python3 scripts/ingest/fetch-url.py <url> --source SOURCE --tags tag1,tag2 [--date YYYY-MM-DD] [--dry-run]
+```
+
+产出两个文件：`inbox/<source>/YYYYMMDD-<slug>.md`（原文）+ `-zh.md`（中文翻译+summary+comments）。
+使用 Jina Reader API（`r.jina.ai`）抓取网页内容。
 
 ## Inbox Note Format
 
