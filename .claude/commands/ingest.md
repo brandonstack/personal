@@ -3,15 +3,21 @@ allowed-tools: Read, Write, Edit, Bash(mv:*), Bash(rm:*)
 description: Reformat and compress an inbox file — restructure content, improve information density, and rename to standard format
 ---
 
+## Input
+
+$ARGUMENTS
+
 ## Your task
 
-Process the file at: $ARGUMENTS
+Determine the input type:
+- **If the input is a file path** (e.g. `inbox/foo.md`): Read the file and process its content.
+- **If the input is raw text**: Use the text directly as the content to process. Create a new file in `inbox/`.
 
-Do the following steps in order:
+Then do the following steps in order:
 
-### 1. Read and analyze the file
+### 1. Analyze the content
 
-Read the file content. Understand the topic, structure, and information density.
+Understand the topic, structure, and information density.
 
 ### 2. Restructure and compress
 
