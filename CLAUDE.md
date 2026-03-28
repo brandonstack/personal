@@ -9,7 +9,7 @@
 ```
 personal/
 ├── projects/          # 有明确目标的项目（完成后归档到 archive/）
-├── areas/             # 长期持续的生活领域（finance, health, travel, learning, home）
+├── areas/             # 长期持续的生活领域（career, finance, health, travel, learning, home）
 ├── archive/           # 已完成项目归档
 ├── inbox/             # 信息摄入：feed 文章、待消化内容
 │   └── <source>/      # 按来源分目录（e.g. simon-willison/, hacker-news/）
