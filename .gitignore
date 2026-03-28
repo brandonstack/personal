@@ -1,1 +1,4 @@
 .alma-snapshots
+__pycache__/
+*.pyc
+scripts/ingest/state/
