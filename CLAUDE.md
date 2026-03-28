@@ -62,3 +62,11 @@ tags: [AI, engineering]
 - `areas/` 和 `projects/` 是人确认过的内容
 - 不要自动移动或删除 inbox 里的文件
 - Markdown 文件中英混用，保持自然
+
+## Areas Content Rules
+
+- 每个文件聚焦一个话题，文件名是话题的 slug（英文、小写、连字符）
+- 文件超过 80 行或涵盖两个以上独立话题时，应该拆分
+- README.md 只做索引，不放实际内容。格式：`- [文件名](文件名.md) — 一行说明`
+- area 下新增内容时，先看 README 索引有没有合适的文件可以追加，没有再新建
+- 文件名不用泛标题（❌ mental-health.md），用具体话题（✅ anxiety-reframing.md）
