@@ -3,3 +3,4 @@ __pycache__/
 *.pyc
 scripts/ingest/state/
 .claude/settings.local.json
+.obsidian/

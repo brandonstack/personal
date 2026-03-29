@@ -43,11 +43,12 @@ python3 scripts/ingest/feed-to-inbox.py --dry-run --hours 48
 /fetch-url <url> --source SOURCE --tags tag1,tag2
 
 # 仅抓取原文（不翻译）
-python3 scripts/ingest/fetch-url.py <url> --source SOURCE --tags tag1,tag2 [--date YYYY-MM-DD] [--dry-run]
+python3 scripts/ingest/fetch-url.py <url> --source SOURCE --tags tag1,tag2 [--date YYYY-MM-DD] [--no-translate] [--dry-run]
 ```
 
 产出两个文件：`inbox/<source>/YYYYMMDD-<slug>.md`（原文）+ `-zh.md`（中文翻译+summary+comments）。
-使用 Jina Reader API（`r.jina.ai`）抓取网页内容。
+使用 fetch-skill 自动路由抓取：普通网页（Jina Reader + fallback）、Twitter/X（FxTwitter）、微信公众号（wechat-exporter）。
+fetch-skill 未安装时自动降级为 Jina Reader。
 
 ## Inbox Note Format
 
