@@ -27,6 +27,7 @@
 - **Harness 设计**：generator-evaluator 分离、架构约束机械化执行、记忆治理
 - **Agent 开发**：Claude Agent SDK、tool use、multi-agent 编排
 - **工作流工具链**：Claude Code、MCP（外循环）vs CLI（内循环）
+  - Claude Code 隐藏命令层：`/rewind`（会话版本控制）、`/loop`（定时任务编排）、`/branch`（对话分叉）让它从对话工具变成可编排的工作流运行时 → 详见 [claude-code-workflow-commands.md](claude-code-workflow-commands.md)
 - **AI 工程基础**：embedding、context engineering、prompt caching
 
 ### 明确不做

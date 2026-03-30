@@ -9,3 +9,4 @@
 - [exit-plan.md](exit-plan.md) — 辞职 & 转型计划（2026-07）
 - [ai-engineer-roadmap.md](ai-engineer-roadmap.md) — AI Systems Engineer 转型路线：定位、技能、项目、求职
 - [action-plan-apr-jul.md](action-plan-apr-jul.md) — 4-7月在职期具体 action：3个项目 + 基础输入 + 节奏
+- [claude-code-workflow-commands.md](claude-code-workflow-commands.md) — Claude Code 隐藏/进阶命令与工作流编排

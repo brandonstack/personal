@@ -18,3 +18,13 @@
 - 区分信号和噪音
 
 这套能力可以迁移到 Copilot Quality、推荐系统效果评估等场景。
+
+### 2026-03-30: Claude Code 工具探索习惯
+
+- [ ] 逐个探索 `/rewind`、`/loop`、`/branch`，每个命令做一次真实场景试用
+- [ ] 用 `/loop` 跑起一个真正有用的自动化（URL list 批量抓取）
+- [ ] 每月查看一次 Claude Code [CHANGELOG](https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md) 和社区推荐
+
+反思：一直是"等文档型"用户，从未主动探索工具能力边界。工具层面的主动探索应该和代码/业务层面的探索一样成为习惯。
+
+> 来源：[digest/20260226-claude-code-hidden-commands.md](../digest/20260226-claude-code-hidden-commands.md)

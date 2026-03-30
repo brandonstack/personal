@@ -8,11 +8,12 @@
 
 ```
 personal/
-├── projects/          # 有明确目标的项目（完成后归档到 archive/）
+├── inbox/             # 未处理的输入（自动摄入 + 手动 fetch），status: raw → digested
+├── resources/         # 已处理的参考资料（从 inbox promote 后移过来，被 areas 引用）
+│   └── <topic>/       # 按话题自由分类（如 ai-engineering/, mental-health/）
 ├── areas/             # 长期持续的生活领域（career, finance, health, travel, learning, home）
+├── projects/          # 有明确目标的项目（完成后归档到 archive/）
 ├── archive/           # 已完成项目归档
-├── inbox/             # 信息摄入：feed 文章、待消化内容
-│   └── <source>/      # 按来源分目录（e.g. simon-willison/, hacker-news/）
 └── scripts/
     └── ingest/        # Feed 摄入脚本
         ├── sources.yaml       # 订阅源配置
@@ -60,6 +61,7 @@ source: "Simon Willison"
 url: "https://..."
 date: "2026-03-28"
 tags: [AI, engineering]
+status: "raw"
 ---
 ```
 
@@ -67,15 +69,17 @@ tags: [AI, engineering]
 
 ## Workflow
 
-1. Feed 脚本定期摄入 → `inbox/`
-2. Claude Code 聊 inbox 里的文章
-3. 有价值的内容手动整理到 `areas/` 或 `projects/`
+1. Feed 脚本定期摄入 → `inbox/`（status: raw）
+2. `/digest <inbox-file>` — 在 inbox 文件末尾追加消化内容（骨架、苏格拉底问题、连接、行动），status → digested
+3. 回答苏格拉底问题，在文件末尾写个人思考
+4. `/promote <inbox-file>` — 精华写入 `areas/`，文件移到 `resources/<topic>/`，status → promoted
 
 ## Key Rules
 
-- `inbox/` 是原始摄入，量大，机器写的
+- `inbox/` 是待处理的输入队列，量大，机器写的
+- `resources/` 是已处理的参考资料，按话题分类，被 areas/ 引用
 - `areas/` 和 `projects/` 是人确认过的内容
-- 不要自动移动或删除 inbox 里的文件
+- 不要自动移动或删除 inbox 里的文件（只有 `/promote` 执行移动）
 - Markdown 文件中英混用，保持自然
 
 ## Areas Content Rules

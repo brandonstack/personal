@@ -37,6 +37,7 @@ source: "<source name if known>"
 url: "<url if applicable>"
 date: "YYYY-MM-DD"
 tags: [relevant, tags]
+status: "raw"
 ---
 ```
 
