@@ -164,6 +164,24 @@ App 不拥有数据，只是纯文本的视图层。很好的简历项目。
 
 建议：先用 Obsidian + 社区插件跑通，确认需求后再做独立 app。
 
+### 最终决定（02:49）
+
+**确定走 Obsidian 插件路线，不做独立 app。**
+
+原因：
+- iOS 独立 app 需要 $99/年 Apple Developer 账号 + 审核流程
+- 网页方案在手机上体验不够好
+- Obsidian 已在 App Store，插件直接本地加载，零发布成本
+
+Kirby Plugin 可以做的功能：
+- 今日 Dashboard（待办、inbox 数量、项目状态）
+- 一键 digest（调 Agent API 或直接调 LLM）
+- 习惯打卡面板
+- 番茄钟
+- inbox 浏览和分拣
+
+做好了可以开源到 Obsidian 社区，"AI-powered personal OS plugin" 在社区有吸引力。
+
 ---
 
 *记录于 2026-04-01 深夜发散讨论*
