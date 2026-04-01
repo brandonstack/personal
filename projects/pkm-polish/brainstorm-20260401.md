@@ -184,4 +184,55 @@ Kirby Plugin 可以做的功能：
 
 ---
 
+## Obsidian 社区插件调研（可直接用的现成插件）
+
+### 📊 核心基础（必装）
+
+| 插件 | 用途 |
+|------|------|
+| **Dataview** | 把笔记当数据库查询，做 dashboard、待办汇总、项目索引 |
+| **Templater** | 动态模板（变量、日期、JS），自动生成 daily note 等 |
+| **Tasks** | 跨文件追踪所有待办，支持截止日期、优先级、重复 |
+| **Calendar** | 左边栏月历，点日期直接跳 daily note |
+| **Periodic Notes** | 周/月/季/年 review 模板 |
+| **Obsidian Git** | 自动 Git 同步，设 5 分钟间隔 |
+
+### 📰 RSS / 信息摄入
+
+| 插件 | 用途 |
+|------|------|
+| **RSS Dashboard** | 2025年新插件（Reddit 998 upvotes），在 Obsidian 里直接浏览 RSS，支持 YouTube、播客 |
+| **ReadItLater** | 从浏览器保存文章到 vault，自动转 markdown |
+
+### ⏱️ 专注 & 习惯
+
+| 插件 | 用途 |
+|------|------|
+| **Pomodoro Timer** | 番茄钟，状态栏显示，完成后自动记录到 daily note |
+| **Habit Tracker 21** | 习惯打卡，可视化连续天数 |
+| **Tracker** | 把笔记中的数值数据生成图表（运动、体重、睡眠趋势） |
+
+### 🎨 UI & 体验
+
+| 插件 | 用途 |
+|------|------|
+| **Homepage** | 打开 Obsidian 自动显示指定首页（dashboard） |
+| **Excalidraw** | 手绘图、思维导图，直接嵌入笔记 |
+| **Linter** | 保存时自动格式化 markdown |
+| **QuickAdd** | 一键捕捉想法，快速创建笔记到指定文件夹 |
+
+### 与纯文本架构的结合方式
+
+1. **Daily Dashboard**（Dataview + Homepage + Templater）— 打开 Obsidian 看到今日待办、inbox 数量、习惯完成率、项目进度
+2. **RSS 阅读**（RSS Dashboard）— 直接在 Obsidian 浏览 feed，一键保存到 inbox/
+3. **习惯追踪**（Habit Tracker + Tracker）— daily note 打勾，月底自动出趋势图
+4. **番茄钟**（Pomodoro Timer）— 学习时用，记录自动写入笔记
+5. **Git 同步**（Obsidian Git）— Agent 改文件 → push → Obsidian 5分钟内 pull
+
+### 建议第一步
+
+先装 Dataview + Calendar + Periodic Notes + Homepage + Obsidian Git，写一个 dashboard 模板放到 repo 里。
+
+---
+
 *记录于 2026-04-01 深夜发散讨论*
