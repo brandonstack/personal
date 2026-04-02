@@ -9,14 +9,12 @@ scripts/ingest/state/
 .claude/settings.local.json
 
 # === Obsidian ===
-# 同步策略：配置同步，产物忽略
-# community-plugins.json 记录了插件列表，另一台设备打开后 Obsidian 自动下载
-# data.json / manifest.json 保留（插件配置 + 版本信息）
-# main.js / styles.css 忽略（编译产物，~19MB）
+# 同步策略：只保留 community-plugins.json（插件名单）
+# plugins/ 整个目录不跟踪，每个设备自己下载
+# 这样 Obsidian 看到空目录会自动根据 community-plugins.json 下载完整插件
 .obsidian/workspace.json
 .obsidian/workspace-mobile.json
-.obsidian/plugins/*/main.js
-.obsidian/plugins/*/styles.css
+.obsidian/plugins/
 
 # === Other ===
 .alma-snapshots
