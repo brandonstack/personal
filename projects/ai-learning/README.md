@@ -26,12 +26,13 @@
 - [ ] 加 evaluator 给 ingest 结果打分（信息密度、分类准确度），迭代调优评分标准
 - [ ] 写一篇文章记录设计决策和 trade-off
 
-## 二、可展示的 harness 项目（5月启动）
+## 二、可展示的 harness 项目（4月启动）
 
-用 Claude Agent SDK 构建 multi-agent 系统解决真实问题。
+→ **独立项目**: [coding-agent-harness](../coding-agent-harness/) ([GitHub repo TBD](https://github.com/xingli/coding-agent-harness))
 
-- [ ] 确定项目方向（如 code review harness：generator 写代码 + evaluator 用测试/lint 验证）
-- [ ] 架构设计 & 实现
+用 Claude Agent SDK 构建 multi-agent coding harness：generator 写代码 + evaluator 打分验证 + 反馈循环。
+
+- [ ] Generator agent + Evaluator agent + 反馈循环
 - [ ] 量化对比 solo agent vs harness 效果
 - [ ] 整理成可讲述的 story（架构、evaluator 调优过程、量化数据）
 
