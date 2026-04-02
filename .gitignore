@@ -1,6 +1,22 @@
-.alma-snapshots
+# === Build / Cache ===
 __pycache__/
 *.pyc
+
+# === Scripts runtime state ===
 scripts/ingest/state/
+
+# === Claude Code ===
 .claude/settings.local.json
-.obsidian/
+
+# === Obsidian ===
+# 同步策略：配置同步，产物忽略
+# community-plugins.json 记录了插件列表，另一台设备打开后 Obsidian 自动下载
+# data.json / manifest.json 保留（插件配置 + 版本信息）
+# main.js / styles.css 忽略（编译产物，~19MB）
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+.obsidian/plugins/*/main.js
+.obsidian/plugins/*/styles.css
+
+# === Other ===
+.alma-snapshots

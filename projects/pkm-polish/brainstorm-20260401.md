@@ -188,14 +188,14 @@ Kirby Plugin 可以做的功能：
 
 ### 📊 核心基础（必装）
 
-| 插件 | 用途 |
-|------|------|
-| **Dataview** | 把笔记当数据库查询，做 dashboard、待办汇总、项目索引 |
-| **Templater** | 动态模板（变量、日期、JS），自动生成 daily note 等 |
-| **Tasks** | 跨文件追踪所有待办，支持截止日期、优先级、重复 |
-| **Calendar** | 左边栏月历，点日期直接跳 daily note |
-| **Periodic Notes** | 周/月/季/年 review 模板 |
-| **Obsidian Git** | 自动 Git 同步，设 5 分钟间隔 |
+| 插件                 | 用途                               |
+| ------------------ | -------------------------------- |
+| **Dataview**       | 把笔记当数据库查询，做 dashboard、待办汇总、项目索引  |
+| **Templater**      | 动态模板（变量、日期、JS），自动生成 daily note 等 |
+| **Tasks**          | 跨文件追踪所有待办，支持截止日期、优先级、重复          |
+| **Calendar**       | 左边栏月历，点日期直接跳 daily note          |
+| **Periodic Notes** | 周/月/季/年 review 模板                |
+| **Obsidian Git**   | 自动 Git 同步，设 5 分钟间隔               |
 
 ### 📰 RSS / 信息摄入
 
