@@ -6,6 +6,17 @@
 
 ---
 
+## Habits
+
+```habittracker
+{
+  "path": "habits",
+  "daysToShow": 21
+}
+```
+
+---
+
 ## Projects
 
 ```dataview
