@@ -2,7 +2,7 @@
 
 ## Today
 
-**[[journal/daily/<% tp.date.now("YYYY-MM-DD") %>|Today's Note]]** | [[journal/weekly/<% tp.date.now("YYYY-[W]ww") %>|This Week]]
+`$= "**[[journal/daily/" + dv.date("today").toFormat("yyyy-MM-dd") + "|Today's Note]]** | [[journal/weekly/" + dv.date("today").toFormat("yyyy-'W'WW") + "|This Week]]**"`
 
 ---
 

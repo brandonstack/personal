@@ -3,10 +3,14 @@
   "hasMigratedDailyNoteSettings": false,
   "hasMigratedWeeklyNoteSettings": false,
   "daily": {
-    "enabled": true
+    "enabled": true,
+    "template": "templates/daily.md",
+    "folder": "journal/daily"
   },
   "weekly": {
-    "enabled": true
+    "enabled": true,
+    "template": "templates/weekly.md",
+    "folder": "journal/weekly"
   },
   "monthly": {
     "enabled": false
