@@ -5,21 +5,27 @@
   "daily": {
     "enabled": true,
     "template": "templates/daily.md",
-    "folder": "journal/daily"
+    "folder": "journal/daily",
+    "format": "YYYY/YYYY-MM/YYYY-MM-DD"
   },
   "weekly": {
     "enabled": true,
     "template": "templates/weekly.md",
-    "folder": "journal/weekly"
+    "folder": "journal/weekly",
+    "format": "YYYY/"
   },
   "monthly": {
-    "enabled": true
+    "enabled": true,
+    "template": "templates/monthly.md",
+    "format": "YYYY/YYYY-MM/[README]"
   },
   "quarterly": {
     "enabled": false
   },
   "yearly": {
     "enabled": true,
-    "template": ""
+    "template": "templates/yearly.md",
+    "folder": "journal",
+    "format": "YYYY/[README]"
   }
 }
