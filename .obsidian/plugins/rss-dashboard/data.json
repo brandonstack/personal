@@ -1,105 +1,29 @@
 {
-  "feeds": [
-    {
-      "title": "黑猫侦探社",
-      "url": "https://feeds.heymeowfm.com/heymeow.xml",
-      "folder": "罪案,播客,中文",
-      "items": [],
-      "lastUpdated": 1775105964505
-    },
-    {
-      "title": "硅谷101",
-      "url": "https://feeds.fireside.fm/sv101/rss",
-      "folder": "科技,AI,投资,中文",
-      "items": [],
-      "lastUpdated": 1775105964505
-    },
-    {
-      "title": "晚点聊 LateTalk",
-      "url": "https://feeds.fireside.fm/latetalk/rss",
-      "folder": "科技,创业,AI,中文",
-      "items": [],
-      "lastUpdated": 1775105964505
-    },
-    {
-      "title": "十分吸引",
-      "url": "https://feed.xyzfm.space/nc63kbv63kjh",
-      "folder": "财经,投资,中文",
-      "items": [],
-      "lastUpdated": 1775105964505
-    },
-    {
-      "title": "大可不必.cn",
-      "url": "https://feed.xyzfm.space/cpuwx8b7yqrn",
-      "folder": "财经,时事,中文",
-      "items": [],
-      "lastUpdated": 1775105964505
-    },
-    {
-      "title": "Simon Willison",
-      "url": "https://simonwillison.net/atom/everything/",
-      "folder": "AI,engineering,python",
-      "items": [],
-      "lastUpdated": 1775105964505
-    },
-    {
-      "title": "Sean Goedecke",
-      "url": "https://www.seangoedecke.com/rss.xml",
-      "folder": "AI,engineering,product",
-      "items": [],
-      "lastUpdated": 1775105964505
-    },
-    {
-      "title": "Ars Technica",
-      "url": "https://feeds.arstechnica.com/arstechnica/features",
-      "folder": "AI,news,tech",
-      "items": [],
-      "lastUpdated": 1775105964505
-    },
-    {
-      "title": "Hacker News - AI",
-      "url": "https://hnrss.org/newest?q=LLM+OR+Claude+OR+GPT+OR+AI+agent",
-      "folder": "AI,HN,community",
-      "items": [],
-      "lastUpdated": 1775105964505
-    }
-  ],
+  "feeds": [],
   "folders": [
     {
       "name": "Uncategorized",
       "subfolders": [],
-      "createdAt": 1775104358453,
-      "modifiedAt": 1775104358453
+      "createdAt": 1775111419436,
+      "modifiedAt": 1775111419436
     },
     {
       "name": "Videos",
       "subfolders": [],
-      "createdAt": 1775104358453,
-      "modifiedAt": 1775104358453
+      "createdAt": 1775111419436,
+      "modifiedAt": 1775111419436
     },
     {
       "name": "Podcasts",
       "subfolders": [],
-      "createdAt": 1775104358453,
-      "modifiedAt": 1775104358453
+      "createdAt": 1775111419436,
+      "modifiedAt": 1775111419436
     },
     {
       "name": "RSS",
       "subfolders": [],
-      "createdAt": 1775104358453,
-      "modifiedAt": 1775104358453
-    },
-    {
-      "name": "播客",
-      "subfolders": []
-    },
-    {
-      "name": "博客",
-      "subfolders": []
-    },
-    {
-      "name": "聚合",
-      "subfolders": []
+      "createdAt": 1775111419436,
+      "modifiedAt": 1775111419436
     }
   ],
   "refreshInterval": 60,
@@ -107,7 +31,7 @@
   "viewStyle": "card",
   "showFeedArt": true,
   "showThumbnails": true,
-  "sidebarCollapsed": true,
+  "sidebarCollapsed": false,
   "sidebarWidth": 280,
   "collapsedFolders": [],
   "tagsCollapsed": true,

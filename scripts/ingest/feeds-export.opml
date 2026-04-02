@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="2.0">
+  <head>
+    <title>Personal Feeds</title>
+  </head>
+  <body>
+    <outline text="播客" title="播客">
+      <outline type="rss" text="黑猫侦探社" title="黑猫侦探社" xmlUrl="https://feeds.heymeowfm.com/heymeow.xml" category="罪案,播客,中文"/>
+      <outline type="rss" text="硅谷101" title="硅谷101" xmlUrl="https://feeds.fireside.fm/sv101/rss" category="科技,AI,投资,中文"/>
+      <outline type="rss" text="晚点聊 LateTalk" title="晚点聊 LateTalk" xmlUrl="https://feeds.fireside.fm/latetalk/rss" category="科技,创业,AI,中文"/>
+      <outline type="rss" text="十分吸引" title="十分吸引" xmlUrl="https://feed.xyzfm.space/nc63kbv63kjh" category="财经,投资,中文"/>
+      <outline type="rss" text="大可不必.cn" title="大可不必.cn" xmlUrl="https://feed.xyzfm.space/cpuwx8b7yqrn" category="财经,时事,中文"/>
+    </outline>
+    <outline text="博客" title="博客">
+      <outline type="rss" text="Simon Willison" title="Simon Willison" xmlUrl="https://simonwillison.net/atom/everything/" category="AI,engineering,python"/>
+      <outline type="rss" text="Sean Goedecke" title="Sean Goedecke" xmlUrl="https://www.seangoedecke.com/rss.xml" category="AI,engineering,product"/>
+    </outline>
+    <outline text="新闻 &amp; 聚合" title="新闻 &amp; 聚合">
+      <outline type="rss" text="Ars Technica - AI" title="Ars Technica - AI" xmlUrl="https://feeds.arstechnica.com/arstechnica/features" category="AI,news,tech"/>
+      <outline type="rss" text="Hacker News - AI" title="Hacker News - AI" xmlUrl="https://hnrss.org/newest?q=LLM+OR+Claude+OR+GPT+OR+AI+agent" category="AI,HN,community"/>
+    </outline>
+  </body>
+</opml>
