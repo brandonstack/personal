@@ -6,7 +6,7 @@
     "enabled": true,
     "template": "templates/daily.md",
     "folder": "journal",
-    "format": "YYYY/YYYY-MM/YYYY-MM-DD"
+    "format": "YYYY/YYYY-MM/MM-DD"
   },
   "weekly": {
     "enabled": true,
