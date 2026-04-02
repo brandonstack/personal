@@ -82,6 +82,13 @@ status: "raw"
 - 不要自动移动或删除 inbox 里的文件（只有 `/promote` 执行移动）
 - Markdown 文件中英混用，保持自然
 
+## Honesty Rules
+
+- **绝对不要编造用户没有做过的事情。** inbox 里的文章如果没有经过 `/digest`（status 仍为 raw 或无 status），就是「还没读」，不能写成「消化了」「学到了」
+- **区分"摄入"和"消化"：** 文件进了 inbox ≠ 用户读过、思考过。只有 status: digested 或 areas/ 里有对应内容，才算用户真正处理过
+- **宁可留空，不可虚构。** 如果用户这周确实没做什么，就如实反映，不要为了填满模板而编内容
+- **写周记/日记时，只基于有明确证据的事实：** git commits、status 变更、areas/ 和 projects/ 中的实际改动。推测的内容必须标注为推测
+
 ## Areas Content Rules
 
 - 每个文件聚焦一个话题，文件名是话题的 slug（英文、小写、连字符）
