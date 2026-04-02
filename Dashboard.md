@@ -2,7 +2,7 @@
 
 ## Today
 
-`$= "**[[journal/daily/" + dv.date("today").toFormat("yyyy-MM-dd") + "|Today's Note]]** | **[[journal/weekly/" + dv.date("today").toFormat("yyyy-'W'WW") + "|This Week]]**"`
+`$= "**[[journal/" + dv.date("today").toFormat("yyyy") + "/" + dv.date("today").toFormat("yyyy-MM") + "/" + dv.date("today").toFormat("yyyy-MM-dd") + "|Today's Note]]** | **[[journal/" + dv.date("today").toFormat("yyyy") + "/" + dv.date("today").toFormat("yyyy-MM") + "/W" + dv.date("today").toFormat("WW") + "|This Week]]**"`
 
 ---
 
@@ -21,12 +21,21 @@ SORT file.mtime DESC
 
 ## Tasks
 
-```dataview
-TASK
-FROM "areas" OR "projects" OR "journal"
-WHERE !completed
-LIMIT 20
-```
+> [!todo] Journal
+> ```dataview
+> TASK
+> FROM "journal"
+> WHERE !completed
+> LIMIT 15
+> ```
+
+> [!example]- Areas & Projects
+> ```dataview
+> TASK
+> FROM "areas" OR "projects"
+> WHERE !completed
+> LIMIT 15
+> ```
 
 ---
 

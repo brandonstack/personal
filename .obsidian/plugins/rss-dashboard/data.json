@@ -3352,10 +3352,6 @@
             {
               "name": "Podcast",
               "color": "#8e44ad"
-            },
-            {
-              "name": "saved",
-              "color": "#3498db"
             }
           ],
           "feedTitle": "十分吸引",
@@ -3363,7 +3359,7 @@
           "coverImage": "https://image.xyzcdn.net/Fk1waZLn-X085aYKQ1uJ5MosSUkE.png",
           "summary": "2026年才过去1/4，但是世界的变化像是被按下了倍速播放键，过去可能需要几年才能发生的事件，出现的变化，现在在用月甚至周为单位快速上演。美伊战争、霍尔木兹海峡封锁等事件持续未决，影响全球政治经济格局；科技发展加速：腾讯在海底捞地推 work buddy；可能是全球最大的IPOSpacex 计划 6 月上市，募资超 750 亿美元，估值达 1.75 万亿美元；宇树科技申请科创板 IPO，募资 42 亿，人类正在突破物理和技术边界，可是人...",
           "author": "敏-姐",
-          "saved": true,
+          "saved": false,
           "mediaType": "podcast",
           "explicit": false,
           "image": "https://image.xyzcdn.net/Fk1waZLn-X085aYKQ1uJ5MosSUkE.png",
@@ -5087,10 +5083,6 @@
             {
               "name": "Podcast",
               "color": "#8e44ad"
-            },
-            {
-              "name": "saved",
-              "color": "#3498db"
             }
           ],
           "feedTitle": "大可不必.cn",
@@ -5098,7 +5090,7 @@
           "coverImage": "https://image.xyzcdn.net/FrIQzcXUfSwmKxeheckEBqsexpUm.png",
           "summary": "2026年开年，资本市场就异常精彩，我们每天都在见证历史。不知道这一轮的行情中各位听友有没有吃到红利呢？很多人会选择把专业的事交给专业的机构——购买基金，而ETF正是公募基金这两年中最亮眼的存在，这里面还有不少国家队的身影。我们这期就来聊聊ETF该怎么配置。如需加入听友群，请加小助理微信：luse54501500:51 26年的资本市场，我们一直在见证历史03:41 有别于主动管理基金，ETF是对指数的复刻，具备标准化、分散风险的特点，...",
           "author": "刘敏_Er07",
-          "saved": true,
+          "saved": false,
           "mediaType": "podcast",
           "explicit": false,
           "image": "https://image.xyzcdn.net/FrIQzcXUfSwmKxeheckEBqsexpUm.png",
