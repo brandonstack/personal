@@ -6,26 +6,11 @@
 
 ---
 
-## Inbox
-
-> [!info] Unprocessed
-> ```dataview
-> TABLE source, date, tags
-> FROM "inbox"
-> SORT date DESC
-> LIMIT 15
-> ```
-
-**Total unprocessed:**
-`$= dv.pages('"inbox"').length`
-
----
-
 ## Projects
 
 ```dataview
 TABLE WITHOUT ID
-  link(file.path, file.name) AS "Project",
+  link(file.path, file.folder) AS "Project",
   file.mtime AS "Last Updated"
 FROM "projects"
 WHERE file.name = "README"
@@ -42,6 +27,21 @@ FROM "areas" OR "projects" OR "journal"
 WHERE !completed
 LIMIT 20
 ```
+
+---
+
+## Inbox
+
+> [!info] Unprocessed
+> ```dataview
+> TABLE source, date, tags
+> FROM "inbox"
+> SORT date DESC
+> LIMIT 15
+> ```
+
+**Total unprocessed:**
+`$= dv.pages('"inbox"').length`
 
 ---
 
