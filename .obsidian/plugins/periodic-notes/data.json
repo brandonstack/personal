@@ -5,19 +5,20 @@
   "daily": {
     "enabled": true,
     "template": "templates/daily.md",
-    "folder": "journal/daily",
+    "folder": "journal",
     "format": "YYYY/YYYY-MM/YYYY-MM-DD"
   },
   "weekly": {
     "enabled": true,
     "template": "templates/weekly.md",
-    "folder": "journal/weekly",
-    "format": "YYYY/"
+    "folder": "journal",
+    "format": "YYYY/YYYY-MM/[W]ww"
   },
   "monthly": {
     "enabled": true,
     "template": "templates/monthly.md",
-    "format": "YYYY/YYYY-MM/[README]"
+    "format": "YYYY/YYYY-MM/[README]",
+    "folder": "journal"
   },
   "quarterly": {
     "enabled": false
