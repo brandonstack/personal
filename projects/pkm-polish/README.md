@@ -23,9 +23,14 @@
 
 ## 一、RSS / Feed
 
-- [ ] 源列表整理更新（`scripts/ingest/sources.yaml`）
-- [ ] feed 自动摄入定时运行（cron / heartbeat）
-- [ ] Obsidian 里浏览 inbox 的体验优化
+- [x] 源列表整理更新（`scripts/ingest/sources.yaml`）
+- [x] Obsidian RSS Dashboard 插件浏览 inbox
+- ~~feed 自动摄入定时运行（cron / heartbeat）~~ → 改走 RSS Dashboard 手动扫描路线
+- [ ] **调研 AI 自动摘要 & 分类** — Claude 定时扫描 RSS Dashboard 感兴趣的内容，自动生成摘要、打标签、分类到 inbox
+- [ ] **播客转译 & 简写** — 剪切感兴趣的播客片段后，自动下载音频、转译 transcript、生成简写版摘要
+
+> 当前流程：RSS Dashboard 手动扫描 → 感兴趣的内容 → Claude 自动摘要分类 → inbox
+> 播客流程：RSS Dashboard 发现播客 → 剪切感兴趣的片段 → 自动下载 + 转译 transcript → 生成简写版 → inbox
 
 ## 二、Digest 流程增强
 
