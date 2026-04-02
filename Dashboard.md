@@ -2,7 +2,7 @@
 
 ## Today
 
-`$= "**[[journal/daily/" + dv.date("today").toFormat("yyyy-MM-dd") + "|Today's Note]]** | [[journal/weekly/" + dv.date("today").toFormat("yyyy-'W'WW") + "|This Week]]**"`
+`$= "**[[journal/daily/" + dv.date("today").toFormat("yyyy-MM-dd") + "|Today's Note]]** | **[[journal/weekly/" + dv.date("today").toFormat("yyyy-'W'WW") + "|This Week]]**"`
 
 ---
 
