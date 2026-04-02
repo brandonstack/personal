@@ -3,7 +3,7 @@
     {
       "title": "硅谷101",
       "url": "https://feeds.fireside.fm/sv101/rss",
-      "folder": "播客",
+      "folder": "Podcasts",
       "items": [
         {
           "title": "活动预告：我们硅谷线下见",
@@ -1670,7 +1670,7 @@
     {
       "title": "晚点聊 LateTalk",
       "url": "https://feeds.fireside.fm/latetalk/rss",
-      "folder": "播客",
+      "folder": "Podcasts",
       "items": [
         {
           "title": "156: AI季报26Q1：OpenClaw、OpenAI vs Anthropic的三重对阵、自进化",
@@ -3337,7 +3337,7 @@
     {
       "title": "十分吸引",
       "url": "https://feed.xyzfm.space/nc63kbv63kjh",
-      "folder": "播客",
+      "folder": "Podcasts",
       "items": [
         {
           "title": "Vol.61 我们正站在时代切换的十字路口",
@@ -5006,7 +5006,7 @@
     {
       "title": "大可不必.cn",
       "url": "https://feed.xyzfm.space/cpuwx8b7yqrn",
-      "folder": "播客",
+      "folder": "Podcasts",
       "items": [
         {
           "title": "Vol.112 乱局下的黄金原油还能投吗？",
@@ -6675,7 +6675,7 @@
     {
       "title": "Simon Willison's Weblog",
       "url": "https://simonwillison.net/atom/everything/",
-      "folder": "新闻 & 聚合",
+      "folder": "RSS",
       "items": [
         {
           "title": "March 2026 sponsors-only newsletter",
@@ -7289,7 +7289,7 @@
     {
       "title": "seangoedecke.com RSS feed",
       "url": "https://www.seangoedecke.com/rss.xml",
-      "folder": "新闻 & 聚合",
+      "folder": "RSS",
       "items": [
         {
           "title": "Working on products people hate",
@@ -7993,7 +7993,7 @@
     {
       "title": "Features - Ars Technica",
       "url": "https://feeds.arstechnica.com/arstechnica/features",
-      "folder": "新闻 & 聚合",
+      "folder": "RSS",
       "items": [
         {
           "title": "Launch day has arrived for NASA's Artemis II mission—here's what to expect",
@@ -8467,7 +8467,7 @@
     {
       "title": "Hacker News - Newest: \"\"LLM\" \"Claude\" \"GPT\" \"AI\" \"agent\"\"",
       "url": "https://hnrss.org/newest?q=LLM+OR+Claude+OR+GPT+OR+AI+agent",
-      "folder": "新闻 & 聚合",
+      "folder": "RSS",
       "items": [
         {
           "title": "Where to host leaked Claude Code source?",
@@ -8956,18 +8956,13 @@
       "name": "Podcasts",
       "subfolders": [],
       "createdAt": 1775111419436,
-      "modifiedAt": 1775111419436
+      "modifiedAt": 1775116442302
     },
     {
       "name": "RSS",
       "subfolders": [],
       "createdAt": 1775111419436,
-      "modifiedAt": 1775111419436
-    },
-    {
-      "name": "播客",
-      "subfolders": [],
-      "modifiedAt": 1775115273193
+      "modifiedAt": 1775116453229
     },
     {
       "name": "博客",
@@ -8976,7 +8971,7 @@
     {
       "name": "新闻 & 聚合",
       "subfolders": [],
-      "modifiedAt": 1775115629742
+      "modifiedAt": 1775116453229
     }
   ],
   "refreshInterval": 60,
@@ -8985,7 +8980,7 @@
   "showFeedArt": true,
   "showThumbnails": true,
   "sidebarCollapsed": false,
-  "sidebarWidth": 280,
+  "sidebarWidth": 412,
   "collapsedFolders": [],
   "tagsCollapsed": true,
   "articleFilter": {
