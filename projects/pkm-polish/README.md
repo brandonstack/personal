@@ -36,7 +36,10 @@
 
 ## 三、多媒体消化（探索）
 
-- [ ] NotebookLM 播客集成 — digest 完后生成播客音频（可接 MCP）
+- [ ] **NotebookLM 主题播客** — 按 tag 聚合 inbox 同主题文章，上传 NotebookLM 生成播客，离线听建立整体理解，听完再回来 `/digest`
+  - [ ] 手动试一轮验证流程：挑一个主题（如 harness-engineering），打包上传，生成播客，听后 digest，评估是否真的加速
+  - [ ] 写脚本按 tag 聚合导出 markdown 文件包，方便批量上传
+  - [ ] 探索 NotebookLM API / MCP 自动化可能性
 - [ ] TTS 语音版 — 用 Kirby 语音发送 digest 摘要
 - [ ] 语音对话消化 — 飞书语音讨论，要点自动写回文件
 - [ ] 生图辅助 — 对话中用图片辅助理解
