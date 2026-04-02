@@ -14,9 +14,7 @@ tags: [yearly]
 
 > 今年如果只能赌几件事，赌什么？
 
-- [ ] 
-- [ ] 
-- [ ] 
+- [ ] Placeholder for year
 
 ## 各 Area 年度意图
 
