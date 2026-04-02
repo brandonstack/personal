@@ -13,12 +13,13 @@
     "folder": "journal/weekly"
   },
   "monthly": {
-    "enabled": false
+    "enabled": true
   },
   "quarterly": {
     "enabled": false
   },
   "yearly": {
-    "enabled": false
+    "enabled": true,
+    "template": ""
   }
 }
