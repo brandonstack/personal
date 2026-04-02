@@ -12,18 +12,12 @@
 > ```dataview
 > TABLE source, date, tags
 > FROM "inbox"
-> WHERE status = "raw"
 > SORT date DESC
 > LIMIT 15
 > ```
 
 **Total unprocessed:**
-```dataview
-LIST length(rows) AS "count"
-FROM "inbox"
-WHERE status = "raw"
-GROUP BY true
-```
+`$= dv.pages('"inbox"').length`
 
 ---
 
