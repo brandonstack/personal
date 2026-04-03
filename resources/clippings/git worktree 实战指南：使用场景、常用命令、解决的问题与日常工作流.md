@@ -8,6 +8,7 @@ created: 2026-04-03
 description: "TL;DR（60 秒速览）是什么：为同一个仓库创建多个“工作区”（工作副本），每个工作区可检出不同分支/提交，同时开发互不干扰。核心约束：同一分支同一时刻只能在一个 worktree 被检出；要并行就用不同分支或 --de…"
 tags:
   - "clippings"
+status: "compiled"
 ---
 ## TL;DR（60 秒速览）
 

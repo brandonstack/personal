@@ -11,6 +11,7 @@
 | [agent-architecture/](agent-architecture/) | 控制流、工具设计、多 Agent 编排、评测、风险、人机交互 | 6 | 2026-04-03 |
 | [knowledge-management/](knowledge-management/) | LLM 知识库、复合循环、Wiki 模式 | 1 | 2026-04-03 |
 | [ai-engineering/](ai-engineering/) | AI 工程通用框架、定位模型、能力迁移 | 1 | 2026-04-03 |
+| [dev-tools/](dev-tools/) | 开发工具与工作流：Git Worktree 等 | 1 | 2026-04-03 |
 
 ## 跨主题核心概念
 
@@ -29,3 +30,4 @@
 - **Agentic Coding 风险**：错误复合、复杂性贩子、低召回率、AI 创造力边界 → [agent-architecture/](agent-architecture/)
 - **Agent Interaction Guidelines**：Linear AIG 五原则、L0-L5 自动驾驶等级 → [agent-architecture/](agent-architecture/)
 - **LLM Knowledge Bases**：Karpathy 模式，raw→compile→wiki→Q&A→回流，复合循环 → [knowledge-management/](knowledge-management/)
+- **Git Worktree**：一仓多工作区并行开发，Claude Code 多会话并行的基础设施 → [dev-tools/](dev-tools/) + [claude-code/](claude-code/)
