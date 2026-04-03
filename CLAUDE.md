@@ -8,13 +8,13 @@
 
 ```
 personal/
-├── inbox/             # 未处理的输入（自动摄入 + 手动 fetch），status: raw → compiled
+├── inbox/             # 未处理的输入队列（自动摄入 + 手动 fetch），compiled 后移到 resources/
 ├── wiki/              # LLM 全权维护的知识库（概念原子化，按主题分目录）
 │   ├── _index.md      # 全局索引（LLM 维护）
 │   └── <topic>/       # 按主题分目录（如 harness-engineering/, claude-code/）
 │       └── _index.md  # 子目录索引（LLM 维护）
 ├── reports/           # LLM 生成的消化报告（供用户审阅和对话）
-├── resources/         # 已处理的参考资料（原文存档，被 wiki 和 areas 引用）
+├── resources/         # 已处理的参考资料（inbox compiled 后移入，原文存档，被 wiki 和 areas 引用）
 ├── areas/             # 长期持续的个人生活领域（career, finance, health, travel, learning, home）
 ├── projects/          # 有明确目标的项目（完成后归档到 archive/）
 ├── archive/           # 已完成项目归档
@@ -73,8 +73,8 @@ status: "raw"
 
 ## Workflow
 
-1. Feed 脚本 / fetch-url 摄入 → `inbox/`（status: raw）
-2. `/compile` — LLM 批量消化 inbox 文件 → 更新 `wiki/` + 生成 `reports/YYYYMMDD-<topic>.md`
+1. Feed 脚本 / fetch-url 摄入 → `inbox/`
+2. `/compile` — LLM 批量消化 inbox 文件 → 更新 `wiki/` + 生成 `reports/` + 移到 `resources/`
 3. 用户审阅 report → 对话讨论 → 有价值的内容回流到 `wiki/` 或 `areas/`
 4. 每次对话都可能增强 wiki（复合效应）
 
@@ -88,7 +88,7 @@ status: "raw"
 - 每个子目录一个 `_index.md`，由 LLM 自动维护（文件列表 + 摘要 + 核心概念 + 跨主题连接）
 - **概念原子化**：一个文件 = 一个概念，50-150 行，自包含。判断标准：问"什么是 X"只需读一个文件
 - **概念去重**：一个概念只在一个地方定义（single source of truth），其他地方通过 `→ [wiki/xxx]` 链接引用
-- wiki 文件必须标注来源：`> 来源：inbox/xxx/yyy.md` 或 `> 来源：对话 YYYY-MM-DD`
+- wiki 文件必须标注来源：`> 来源：resources/xxx/yyy.md` 或 `> 来源：对话 YYYY-MM-DD`
 - 文件超过 150 行时拆分为更细的概念
 - 新主题超过 3 个相关文件时，建新子目录
 - wiki 内容是**概念文档**（像 wiki 词条），不是文章摘要
@@ -100,16 +100,16 @@ status: "raw"
 
 ## Key Rules
 
-- `inbox/` 是待处理的输入队列，量大，机器写的
+- `inbox/` 是待处理的输入队列，compiled 后出队移到 `resources/`
+- `resources/` 是已处理的原文参考（从 inbox 毕业），被 wiki 和 areas 引用
 - `wiki/` 是 LLM 维护的知识库，概念原子化，跨来源综合
 - `reports/` 是消化报告，供用户审阅和对话
-- `resources/` 是已处理的原文参考，被 wiki 和 areas 引用
 - `areas/` 和 `projects/` 是人确认过的个人内容
 - Markdown 文件中英混用，保持自然
 
 ## Honesty Rules
 
-- **wiki 内容必须标注来源。** 每个知识点追溯到具体的 inbox 文件或对话日期
+- **wiki 内容必须标注来源。** 每个知识点追溯到具体的 resources 文件或对话日期
 - **区分 LLM 分析和用户观点：** wiki 里的内容是 LLM 从材料中提取的，不代表用户认同。只有用户在对话中明确表达的观点才能标注为用户确认
 - **report 中的建议是建议，不是事实。** report 的「对你的具体建议」部分是 LLM 的推断，需要用户审阅
 - **宁可留空，不可虚构。** 如果材料不够得出某个结论，就说不够，不要编

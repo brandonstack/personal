@@ -8,6 +8,7 @@ created: 2026-04-02
 description:
 tags:
   - "clippings"
+status: "compiled"
 ---
 之前分享过两个大火的 Claude Code skills 以及我的用法：YC CEO [@garrytan](https://x.com/@garrytan) 的 gstack（一个人模拟整支团队：CEO review、架构 review、浏览器 QA、周报统计），和 Jesse Vincent 的 Superpowers（标准化的 brainstorm → plan → execute → review 流程，120k stars，几乎是 Claude Code 的标配）。
 

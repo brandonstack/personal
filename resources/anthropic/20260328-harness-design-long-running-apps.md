@@ -3,6 +3,7 @@ source: "anthropic"
 url: "https://www.anthropic.com/engineering/harness-design-long-running-apps"
 date: "2026-03-28"
 tags: [AI, agents, harness-design, Claude, engineering]
+status: "compiled"
 ---
 _Written by Prithvi Rajasekaran, a member of our[Labs](https://www.anthropic.com/news/introducing-anthropic-labs) team._
 

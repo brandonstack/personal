@@ -3,6 +3,7 @@ source: "OpenAI"
 url: "https://openai.com/index/harness-engineering/"
 date: "2026-02-11"
 tags: [AI, engineering, codex, agent, software-development]
+status: "compiled"
 ---
 
 # 驾驭工程：在 Agent 优先的世界中利用 Codex

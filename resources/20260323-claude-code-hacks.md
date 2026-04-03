@@ -3,6 +3,7 @@ source: "@mvanhorn (X/Twitter)"
 url: "https://x.com/mvanhorn/status/2035857346602340637"
 date: "2026-03-23"
 tags: [claude-code, workflow, productivity, AI-tooling]
+status: "compiled"
 ---
 
 # Every Claude Code Hack I Know

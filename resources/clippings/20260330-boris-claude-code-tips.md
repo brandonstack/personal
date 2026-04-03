@@ -3,6 +3,7 @@ source: "https://x.com/wquguru/status/2038483068428685538"
 url: "https://x.com/wquguru/status/2038483068428685538"
 date: "2026-03-30"
 tags: [claude-code, productivity, tools]
+status: "compiled"
 ---
 
 # Boris 的菜刀：Claude Code 隐藏用法

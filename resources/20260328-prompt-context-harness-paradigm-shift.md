@@ -3,6 +3,7 @@ source: "GoSailGlobal (Twitter)"
 url: "https://x.com/GoSailGlobal/status/2037805864367911394"
 date: "2026-03-28"
 tags: [AI, engineering, agents, harness-engineering]
+status: "compiled"
 ---
 
 # Prompt → Context → Harness：AI 工程三次范式转移

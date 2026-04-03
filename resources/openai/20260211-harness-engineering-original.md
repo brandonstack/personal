@@ -3,6 +3,7 @@ source: "OpenAI"
 url: "https://openai.com/index/harness-engineering/"
 date: "2026-02-11"
 tags: [AI, engineering, codex, agent, software-development]
+status: "compiled"
 ---
 
 # Harness engineering: leveraging Codex in an agent-first world

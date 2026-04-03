@@ -54,7 +54,7 @@ Follow these steps in order:
 
 **a) 追加到已有 wiki 文件**（概念已存在，新材料补充/验证/挑战）
 - 在适当位置追加新内容
-- 标注来源：`> 来源：inbox/xxx/yyy.md`
+- 标注来源：`> 来源：resources/xxx/yyy.md`
 
 **b) 创建新 wiki 文件**（全新概念）
 - 一个文件 = 一个概念，50-150 行
@@ -120,19 +120,23 @@ wiki_updated:
 <- 挑战性的，不是确认性的>
 ```
 
-### 7. 标记 inbox 文件
+### 7. 标记并移动 inbox 文件
 
-为每个处理过的 inbox 文件更新 frontmatter：
+为每个处理过的 inbox 文件：
+
+**a) 更新 frontmatter**
 - 添加或修改 `status: "compiled"`
-- 不移动文件（留在 inbox 原位）
+- 如果文件没有 `status` 字段，在 frontmatter 中添加
+- 如果文件没有 frontmatter，添加最小 frontmatter：`status: "compiled"`
 
-如果文件没有 `status` 字段，在 frontmatter 中添加。
-如果文件没有 frontmatter，添加最小 frontmatter：
-```yaml
----
-status: "compiled"
----
-```
+**b) 移到 resources/**
+- 保持目录结构：`inbox/anthropic/xxx.md` → `resources/anthropic/xxx.md`
+- 如果目标目录不存在，先 `mkdir -p`
+- 同一来源的 `-zh.md` 翻译版本一起移动
+
+**c) 更新 wiki 引用路径**
+- 把本批 wiki 文件中的 `> 来源：inbox/xxx` 更新为 `> 来源：resources/xxx`
+- 更新 report 中的 sources 路径（frontmatter + 正文）
 
 ### 8. 输出
 

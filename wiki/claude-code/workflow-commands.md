@@ -23,5 +23,8 @@
 - URL 批量处理：维护 pending-urls.txt，用 `/loop` 每 5-10 分钟自动扫描并 fetch
 - Branch 做任务隔离：context 确定时，每个 task 拆独立 branch 减少冷启动
 
-> 来源：inbox/20260226-claude-code-hidden-commands.md（原文）
+> 来源：resources/20260226-claude-code-hidden-commands.md（原文）
 > 来源：areas/career/claude-code-workflow-commands.md（迁移）
+
+→ [workflow-patterns.md](workflow-patterns.md) — 更多工作流模式和技巧
+→ [architecture-overview.md](architecture-overview.md) — 命令在整体架构中的位置

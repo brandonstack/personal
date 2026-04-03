@@ -3,6 +3,7 @@ source: "Twitter @HiTw93"
 url: "https://x.com/HiTw93/status/2032091246588518683"
 date: "2026-03-12"
 tags: [claude-code, context-engineering, skills, hooks, prompt-caching]
+status: "compiled"
 ---
 
 # Claude Code：架构、治理与工程实践

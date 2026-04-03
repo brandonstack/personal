@@ -3,6 +3,7 @@ source: "FradSer (Twitter)"
 url: "https://x.com/FradSer/status/2036619884122267745"
 date: "2026-03-25"
 tags: [vibe-coding, claude-code, workflow, AI-coding]
+status: "compiled"
 ---
 
 # Vibe Coding 又快又好的秘诀

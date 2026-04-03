@@ -8,6 +8,7 @@ created: 2026-04-02
 description:
 tags:
   - "clippings"
+status: "compiled"
 ---
 **目标读者**：零基础团队同事 **学习周期**：1 周 **预期效果**：日常开发提效 3-5 倍，实现 Agent 级自主开发 **内容来源**：Anthropic 官方文档、Boris Cherny 团队分享、[Builder.io](http://builder.io/) 50 Tips、GitHub 社区最佳实践、2026.3.31 源码泄露分析
 

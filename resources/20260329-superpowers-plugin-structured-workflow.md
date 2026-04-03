@@ -3,6 +3,7 @@ source: "Twitter @Khazix0918"
 url: "https://x.com/Khazix0918/status/2037015170091016257"
 date: "2026-03-29"
 tags: [claude-code, agent-workflow, vibe-coding, tools]
+status: "compiled"
 ---
 
 # Superpowers：给 Agent 加结构化工作流的插件

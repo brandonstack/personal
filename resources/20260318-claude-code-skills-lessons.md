@@ -3,6 +3,7 @@ source: "Thariq Shihipar (Twitter / Anthropic)"
 url: "https://x.com/trq212/status/2033949937936085378"
 date: "2026-03-18"
 tags: [claude-code, skills, agents, developer-tools]
+status: "compiled"
 ---
 
 # Lessons from Building Claude Code: How We Use Skills

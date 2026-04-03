@@ -3,6 +3,7 @@ source: "IceBearMiner (Twitter)"
 url: "https://x.com/IceBearMiner/status/2037888800341610684"
 date: "2026-03-15"
 tags: [claude-code, architecture, agents, AI-engineering]
+status: "compiled"
 ---
 
 # 从零构建 Claude Code：AI CLI 架构拆解
