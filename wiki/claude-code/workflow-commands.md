@@ -1,6 +1,6 @@
 # Claude Code 工作流命令
 
-日常使用中值得掌握的隐藏/进阶命令，重点是对会话控制和工作流编排有用的。
+日常使用中值得掌握的隐藏/进阶命令，重点是会话控制和工作流编排。
 
 ## 会话控制
 
@@ -17,12 +17,11 @@
 
 - `/model opusplan`：规划阶段用 Opus，执行阶段用 Sonnet。菜单中不显示，需手动输入
 
-## 个人反思
+## 工作流编排应用
 
-从来没用过 rewind，遇到错误就在错误方向上越走越远。正确做法：发了错误指令或改了不对的东西时，及时回退一步。
+`/loop` 和 `/branch` 让 Claude Code 从对话工具变成可编排的工作流运行时：
+- URL 批量处理：维护 pending-urls.txt，用 `/loop` 每 5-10 分钟自动扫描并 fetch
+- Branch 做任务隔离：context 确定时，每个 task 拆独立 branch 减少冷启动
 
-`/loop` 和 `/branch` 让 Claude Code 从对话工具变成可编排的工作流运行时。两个具体想法：
-1. URL 批量处理：维护 pending-urls.txt，用 `/loop` 每 5-10 分钟自动扫描并 fetch
-2. Branch 做任务隔离：context 确定时，每个 task 拆独立 branch 减少冷启动
-
-> 来源：[digest/20260226-claude-code-hidden-commands.md](../digest/20260226-claude-code-hidden-commands.md)
+> 来源：inbox/20260226-claude-code-hidden-commands.md（原文）
+> 来源：areas/career/claude-code-workflow-commands.md（迁移）

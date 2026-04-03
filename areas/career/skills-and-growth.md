@@ -27,4 +27,4 @@
 
 反思：一直是"等文档型"用户，从未主动探索工具能力边界。工具层面的主动探索应该和代码/业务层面的探索一样成为习惯。
 
-> 来源：[digest/20260226-claude-code-hidden-commands.md](../digest/20260226-claude-code-hidden-commands.md)
+详细命令参考 → [wiki/claude-code/workflow-commands.md](../../wiki/claude-code/workflow-commands.md)

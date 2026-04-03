@@ -2,23 +2,27 @@
 
 ## What This Is
 
-个人 mono repo，PARA 方法论组织生活事务 + 自动化信息摄入。
+个人 mono repo，PARA 方法论组织生活事务 + LLM 维护的知识库 + 自动化信息摄入。
 
 ## Structure
 
 ```
 personal/
-├── inbox/             # 未处理的输入（自动摄入 + 手动 fetch），status: raw → digested
-├── resources/         # 已处理的参考资料（从 inbox promote 后移过来，被 areas 引用）
-│   └── <topic>/       # 按话题自由分类（如 ai-engineering/, mental-health/）
-├── areas/             # 长期持续的生活领域（career, finance, health, travel, learning, home）
+├── inbox/             # 未处理的输入（自动摄入 + 手动 fetch），status: raw → compiled
+├── wiki/              # LLM 全权维护的知识库（概念原子化，按主题分目录）
+│   ├── _index.md      # 全局索引（LLM 维护）
+│   └── <topic>/       # 按主题分目录（如 harness-engineering/, claude-code/）
+│       └── _index.md  # 子目录索引（LLM 维护）
+├── reports/           # LLM 生成的消化报告（供用户审阅和对话）
+├── resources/         # 已处理的参考资料（原文存档，被 wiki 和 areas 引用）
+├── areas/             # 长期持续的个人生活领域（career, finance, health, travel, learning, home）
 ├── projects/          # 有明确目标的项目（完成后归档到 archive/）
 ├── archive/           # 已完成项目归档
 └── scripts/
     └── ingest/        # Feed 摄入脚本
         ├── sources.yaml       # 订阅源配置
         ├── sync-feeds.py      # 同步 sources → feed CLI DB
-        └── feed-to-inbox.py   # 拉取 entries → inbox/<source>/
+        ├── feed-to-inbox.py   # 拉取 entries → inbox/<source>/
         └── fetch-url.py       # 单篇 URL 抓取（Jina Reader）
 ```
 
@@ -69,24 +73,46 @@ status: "raw"
 
 ## Workflow
 
-1. Feed 脚本定期摄入 → `inbox/`（status: raw）
-2. `/digest <inbox-file>` — 在 inbox 文件末尾追加消化内容（骨架、苏格拉底问题、连接、行动），status → digested
-3. 回答苏格拉底问题，在文件末尾写个人思考
-4. `/promote <inbox-file>` — 精华写入 `areas/`，文件移到 `resources/<topic>/`，status → promoted
+1. Feed 脚本 / fetch-url 摄入 → `inbox/`（status: raw）
+2. `/compile` — LLM 批量消化 inbox 文件 → 更新 `wiki/` + 生成 `reports/YYYYMMDD-<topic>.md`
+3. 用户审阅 report → 对话讨论 → 有价值的内容回流到 `wiki/` 或 `areas/`
+4. 每次对话都可能增强 wiki（复合效应）
+
+## Wiki
+
+`wiki/` 是 LLM 全权维护的知识库。人不直接编辑 wiki 文件，所有更新通过 `/compile` 或对话回流完成。
+
+### Wiki Rules
+
+- wiki 文件由 LLM 创建和维护，人通过审阅 report + 对话来影响内容
+- 每个子目录一个 `_index.md`，由 LLM 自动维护（文件列表 + 摘要 + 核心概念 + 跨主题连接）
+- **概念原子化**：一个文件 = 一个概念，50-150 行，自包含。判断标准：问"什么是 X"只需读一个文件
+- **概念去重**：一个概念只在一个地方定义（single source of truth），其他地方通过 `→ [wiki/xxx]` 链接引用
+- wiki 文件必须标注来源：`> 来源：inbox/xxx/yyy.md` 或 `> 来源：对话 YYYY-MM-DD`
+- 文件超过 150 行时拆分为更细的概念
+- 新主题超过 3 个相关文件时，建新子目录
+- wiki 内容是**概念文档**（像 wiki 词条），不是文章摘要
+
+### Wiki 与 Areas 的区别
+
+- `wiki/`：通用知识、框架、模式、工具用法 — LLM 全权维护
+- `areas/`：个人生活决策、计划、目标、反思 — 人确认后才写入
 
 ## Key Rules
 
 - `inbox/` 是待处理的输入队列，量大，机器写的
-- `resources/` 是已处理的参考资料，按话题分类，被 areas/ 引用
-- `areas/` 和 `projects/` 是人确认过的内容
-- 不要自动移动或删除 inbox 里的文件（只有 `/promote` 执行移动）
+- `wiki/` 是 LLM 维护的知识库，概念原子化，跨来源综合
+- `reports/` 是消化报告，供用户审阅和对话
+- `resources/` 是已处理的原文参考，被 wiki 和 areas 引用
+- `areas/` 和 `projects/` 是人确认过的个人内容
 - Markdown 文件中英混用，保持自然
 
 ## Honesty Rules
 
-- **绝对不要编造用户没有做过的事情。** inbox 里的文章如果没有经过 `/digest`（status 仍为 raw 或无 status），就是「还没读」，不能写成「消化了」「学到了」
-- **区分"摄入"和"消化"：** 文件进了 inbox ≠ 用户读过、思考过。只有 status: digested 或 areas/ 里有对应内容，才算用户真正处理过
-- **宁可留空，不可虚构。** 如果用户这周确实没做什么，就如实反映，不要为了填满模板而编内容
+- **wiki 内容必须标注来源。** 每个知识点追溯到具体的 inbox 文件或对话日期
+- **区分 LLM 分析和用户观点：** wiki 里的内容是 LLM 从材料中提取的，不代表用户认同。只有用户在对话中明确表达的观点才能标注为用户确认
+- **report 中的建议是建议，不是事实。** report 的「对你的具体建议」部分是 LLM 的推断，需要用户审阅
+- **宁可留空，不可虚构。** 如果材料不够得出某个结论，就说不够，不要编
 - **写周记/日记时，只基于有明确证据的事实：** git commits、status 变更、areas/ 和 projects/ 中的实际改动。推测的内容必须标注为推测
 
 ## Areas Content Rules
