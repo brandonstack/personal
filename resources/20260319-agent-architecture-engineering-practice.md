@@ -3,6 +3,7 @@ source: "Twitter @HiTw93"
 url: "https://x.com/HiTw93/status/2034627967926825175"
 date: "2026-03-19"
 tags: [agent, architecture, context-engineering, tools, evaluation]
+status: "compiled"
 ---
 
 # Agent 原理、架构与工程实践

@@ -8,8 +8,8 @@
 |------|------|--------|----------|
 | [harness-engineering/](harness-engineering/) | Harness 设计模式：包裹 LLM 的运行时系统 | 4 | 2026-04-03 |
 | [claude-code/](claude-code/) | Claude Code 架构、context 管理、工具治理、skill 设计、工作流 | 8 | 2026-04-03 |
-| [agent-architecture/](agent-architecture/) | 多 agent 系统、编排模式、tool 设计 | 0 | — |
-| [knowledge-management/](knowledge-management/) | 知识库架构、信息治理、PKM 方法论 | 0 | — |
+| [agent-architecture/](agent-architecture/) | 控制流、工具设计、多 Agent 编排、评测、风险、人机交互 | 6 | 2026-04-03 |
+| [knowledge-management/](knowledge-management/) | LLM 知识库、复合循环、Wiki 模式 | 1 | 2026-04-03 |
 | [ai-engineering/](ai-engineering/) | AI 工程通用框架、定位模型、能力迁移 | 1 | 2026-04-03 |
 
 ## 跨主题核心概念
@@ -24,3 +24,8 @@
 - **对抗性验证**："try to break it" 哲学，evaluator-generator 在工具级别的实现 → [claude-code/](claude-code/) + [harness-engineering/](harness-engineering/)
 - **Plan-First 工作流**：规划 2h → 执行 10min → 审查 1h → [claude-code/](claude-code/)
 - **Skill 作为可分发 prompt**：Anthropic 内部 9 大类别，社区插件生态 → [claude-code/](claude-code/)
+- **ACI 工具设计**：三代演进（API→ACI→Advanced），MCP vs CLI 双通道 → [agent-architecture/](agent-architecture/)
+- **Pass@k vs Pass^k**：开发阶段验证能力边界 vs 上线质量保证 → [agent-architecture/](agent-architecture/)
+- **Agentic Coding 风险**：错误复合、复杂性贩子、低召回率、AI 创造力边界 → [agent-architecture/](agent-architecture/)
+- **Agent Interaction Guidelines**：Linear AIG 五原则、L0-L5 自动驾驶等级 → [agent-architecture/](agent-architecture/)
+- **LLM Knowledge Bases**：Karpathy 模式，raw→compile→wiki→Q&A→回流，复合循环 → [knowledge-management/](knowledge-management/)

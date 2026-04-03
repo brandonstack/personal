@@ -2,6 +2,7 @@
 source: "journal"
 date: "2026-03-29"
 tags: [career, layoff, independence, mindset]
+status: "compiled"
 ---
 
 ## 裁员焦虑

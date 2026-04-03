@@ -3,6 +3,7 @@ source: "36氪 / InfoQ (podcast transcript)"
 url: "https://36kr.com/p/3725127329888647"
 date: "2026-03-29"
 tags: [AI-coding, software-engineering, claude-code, creativity, Jeremy-Howard]
+status: "compiled"
 ---
 
 # Jeremy Howard：编程不是瓶颈，Claude Code 走错了方向

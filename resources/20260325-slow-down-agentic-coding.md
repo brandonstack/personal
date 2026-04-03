@@ -3,6 +3,7 @@ source: "Mario Zechner"
 url: "https://mariozechner.at/posts/2026-03-25-thoughts-on-slowing-the-fuck-down/"
 date: "2026-03-25"
 tags: [AI-coding, agents, code-quality, engineering-culture]
+status: "compiled"
 ---
 
 # Thoughts on Slowing the Fuck Down

@@ -3,6 +3,7 @@ source: "Justineo"
 url: "https://github.com/Justineo/working-with-ai/blob/main/journey/mcp-vs-cli.md"
 date: "2026-03-29"
 tags: [AI, MCP, CLI, agent, architecture]
+status: "compiled"
 ---
 
 # MCP vs CLI：面向 AI Agent 工具集成的深度研究

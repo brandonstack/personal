@@ -3,6 +3,7 @@ source: "Justineo"
 url: "https://github.com/Justineo/working-with-ai"
 date: "2026-03-29"
 tags: [AI, engineering, workflow, agent, prompt]
+status: "compiled"
 ---
 
 # Working with AI — Justineo 部门分享 Slides 干货提炼

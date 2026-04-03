@@ -8,6 +8,7 @@ created: 2026-04-03
 description: "karpathy is showing one of the simplest AI architectures that actually works.. dump research into a folder, let the model organise it into"
 tags:
   - "clippings"
+status: "compiled"
 ---
 **JUMPERZ** @jumperz 2026-04-02
 

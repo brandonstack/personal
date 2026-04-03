@@ -8,6 +8,7 @@ created: 2026-04-03
 description: "Building a personal knowledge base for my agents is increasingly where I spend my time these days. Like @karpathy, I also use Obsidian for"
 tags:
   - "clippings"
+status: "compiled"
 ---
 **elvis** @omarsar0 2026-04-02
 

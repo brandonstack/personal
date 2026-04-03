@@ -8,6 +8,7 @@ created: 2026-04-02
 description: "Foundational principles and practices for designing agent interactions that integrate more naturally into human workflows."
 tags:
   - "clippings"
+status: "compiled"
 ---
 ![](https://webassets.linear.app/images/ornj730p/production/53e40b7086710414d18bfc19953422f77bbce06f-1344x756.png?q=95&auto=format&dpr=2)
 

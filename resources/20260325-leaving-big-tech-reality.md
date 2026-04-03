@@ -3,6 +3,7 @@ source: "jinchenma_ai (Twitter)"
 url: "https://x.com/jinchenma_ai/status/2036725515701420062"
 date: "2026-03-25"
 tags: [career, big-tech, independence, personal-brand]
+status: "compiled"
 ---
 
 # 逃离大厂之后，才发现外面没有下雨
