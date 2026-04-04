@@ -22,13 +22,13 @@ target_wiki_dir: "ai-infra"
 
 | # | 标题 | URL | Source | 说明 | Status |
 |---|------|-----|--------|------|--------|
-| 1 | A Survey on Efficient Inference for LLMs | https://arxiv.org/abs/2404.14294 | Wan et al. | LLM 推理优化综述，全景图 | ⬜ |
-| 2 | vLLM: Easy, Fast, and Cheap LLM Serving | https://docs.vllm.ai/en/latest/ | vLLM | 最流行的开源 LLM serving 框架 | ⬜ |
-| 3 | Full Stack Optimization of Transformer Inference | https://developer.nvidia.com/blog/mastering-llm-techniques-inference-optimization/ | NVIDIA | NVIDIA 官方推理优化技术总览 | ⬜ |
-| 4 | The Illustrated LLM Inference | https://newsletter.maartengrootendorst.com/p/a-visual-guide-to-llm-inference | Maarten Grootendorst | LLM 推理过程可视化 | ⬜ |
-| 5 | GPU Architecture Fundamentals | https://blog.codingconfessions.com/p/gpu-computing | Coding Confessions | 工程师视角的 GPU 计算入门 | ⬜ |
-| 6 | LLM Inference Cost Analysis | https://www.cursor.com/blog/llama-inference | Cursor | 真实的 LLM 推理成本分析 | ⬜ |
-| 7 | Serving LLMs in Production | https://www.anyscale.com/blog/continuous-batching-llm-inference | Anyscale | Continuous batching 详解 | ⬜ |
+| 1 | A Survey on Efficient Inference for LLMs | https://arxiv.org/abs/2404.14294 | Wan et al. | LLM 推理优化综述，全景图 | ✅ |
+| 2 | vLLM: Easy, Fast, and Cheap LLM Serving | https://docs.vllm.ai/en/latest/ | vLLM | 最流行的开源 LLM serving 框架 | ✅ |
+| 3 | Full Stack Optimization of Transformer Inference | https://developer.nvidia.com/blog/mastering-llm-techniques-inference-optimization/ | NVIDIA | NVIDIA 官方推理优化技术总览 | ✅ |
+| 4 | The Illustrated LLM Inference | https://newsletter.maartengrootendorst.com/p/a-visual-guide-to-llm-inference | Maarten Grootendorst | LLM 推理过程可视化 | ✅ |
+| 5 | GPU Architecture Fundamentals | https://blog.codingconfessions.com/p/gpu-computing | Coding Confessions | 工程师视角的 GPU 计算入门 | ✅ |
+| 6 | LLM Inference Cost Analysis | https://www.cursor.com/blog/llama-inference | Cursor | 真实的 LLM 推理成本分析 | ✅ |
+| 7 | Serving LLMs in Production | https://www.anyscale.com/blog/continuous-batching-llm-inference | Anyscale | Continuous batching 详解 | ✅ |
 
 ## Tier 2 — 推荐
 

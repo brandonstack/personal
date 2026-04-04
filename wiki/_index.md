@@ -4,12 +4,16 @@
 
 ## 📖 概念速查
 
-不确定某个术语的含义？→ [glossary/](glossary/) — 12 个核心概念的简明定义
+不确定某个术语的含义？→ [glossary/](glossary/) — 17 个核心概念的简明定义
 
 ## 主题目录
 
 | 目录 | 说明 | 文件数 | 最后更新 |
 |------|------|--------|----------|
+| [ml-fundamentals/](ml-fundamentals/) | Transformer 架构、attention、自回归生成、KV Cache、微调方法 | 6 | 2026-04-04 |
+| [rag-retrieval/](rag-retrieval/) | RAG pipeline、embedding、Contextual Retrieval、混合搜索、评估 | 6 | 2026-04-04 |
+| [ai-eval-safety/](ai-eval-safety/) | LLM 评估方法、LLM-as-Judge、Constitutional AI、EDD、生产模式 | 5 | 2026-04-04 |
+| [ai-infra/](ai-infra/) | GPU 架构、推理成本、Continuous Batching、量化 | 4 | 2026-04-04 |
 | [harness-engineering/](harness-engineering/) | Harness 设计模式：包裹 LLM 的运行时系统 | 4 | 2026-04-03 |
 | [claude-code/](claude-code/) | Claude Code 架构、context 管理、工具治理、skill 设计、工作流 | 8 | 2026-04-03 |
 | [agent-architecture/](agent-architecture/) | 控制流、工具设计、多 Agent 编排、评测、风险、人机交互 | 6 | 2026-04-03 |
@@ -36,3 +40,8 @@
 - **LLM Knowledge Bases**：Karpathy 模式，raw→compile→wiki→Q&A→回流，复合循环 → [knowledge-management/](knowledge-management/)
 - **渐进式加载与上下文感知注入**：Claudesidian 的 L0→L1→L2 + Skill Discovery，与 Claude Code deferred tools 同源 → [knowledge-management/](knowledge-management/) + [agent-architecture/](agent-architecture/)
 - **Git Worktree**：一仓多工作区并行开发，Claude Code 多会话并行的基础设施 → [dev-tools/](dev-tools/) + [claude-code/](claude-code/)
+- **Transformer → Self-Attention → Decoder-only**：现代 LLM 的架构基础链 → [ml-fundamentals/](ml-fundamentals/)
+- **KV Cache 与推理成本**：decode 阶段 memory-bandwidth bound 的根本原因 → [ml-fundamentals/](ml-fundamentals/) + [ai-infra/](ai-infra/)
+- **RAG 技术栈**：Embedding → Retrieval → Reranking → Generation，Contextual Retrieval 67% 改善 → [rag-retrieval/](rag-retrieval/)
+- **Eval Driven Development**：LLM 应用最高 ROI 投入——先写 eval 再优化 → [ai-eval-safety/](ai-eval-safety/)
+- **Continuous Batching + PagedAttention**：23× 推理吞吐提升 → [ai-infra/](ai-infra/)

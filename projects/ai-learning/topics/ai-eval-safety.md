@@ -22,13 +22,13 @@ target_wiki_dir: "ai-eval-safety"
 
 | # | 标题 | URL | Source | 说明 | Status |
 |---|------|-----|--------|------|--------|
-| 1 | A Practical Guide to LLM Evaluations | https://www.anthropic.com/research/evaluating-ai-systems | Anthropic | Anthropic 官方 eval 指南 | ⬜ |
-| 2 | OpenAI Evals Framework | https://github.com/openai/evals | OpenAI | 开源 eval 框架，理解 eval 设计模式 | ⬜ |
-| 3 | Chatbot Arena: Benchmarking LLMs | https://lmsys.org/blog/2023-05-03-arena/ | LMSYS | Elo-based LLM 评估方法论 | ⬜ |
-| 4 | OWASP Top 10 for LLM Applications | https://owasp.org/www-project-top-10-for-large-language-model-applications/ | OWASP | LLM 安全威胁 Top 10 | ⬜ |
-| 5 | Constitutional AI | https://www.anthropic.com/research/constitutional-ai-harmlessness-from-ai-feedback | Anthropic | Constitutional AI 论文解读 | ⬜ |
-| 6 | How to Evaluate LLM Applications | https://hamel.dev/blog/posts/evals/ | Hamel Husain | 实操向的 eval 方法论（工程师视角） | ⬜ |
-| 7 | Braintrust: The Guide to LLM Evals | https://www.braintrust.dev/docs/guides/evals | Braintrust | Eval 工具实操教程 | ⬜ |
+| 1 | A Practical Guide to LLM Evaluations | https://www.anthropic.com/research/evaluating-ai-systems | Anthropic | Anthropic 官方 eval 指南 | ✅ |
+| 2 | OpenAI Evals Framework | https://github.com/openai/evals | OpenAI | 开源 eval 框架，理解 eval 设计模式 | ✅ |
+| 3 | Chatbot Arena: Benchmarking LLMs | https://lmsys.org/blog/2023-05-03-arena/ | LMSYS | Elo-based LLM 评估方法论 | ✅ |
+| 4 | OWASP Top 10 for LLM Applications | https://owasp.org/www-project-top-10-for-large-language-model-applications/ | OWASP | LLM 安全威胁 Top 10 | ✅ |
+| 5 | Constitutional AI | https://www.anthropic.com/research/constitutional-ai-harmlessness-from-ai-feedback | Anthropic | Constitutional AI 论文解读 | ✅ |
+| 6 | How to Evaluate LLM Applications | https://hamel.dev/blog/posts/evals/ | Hamel Husain | 实操向的 eval 方法论（工程师视角） | ✅ |
+| 7 | Braintrust: The Guide to LLM Evals | https://www.braintrust.dev/docs/guides/evals | Braintrust | Eval 工具实操教程 | ✅ |
 
 ## Tier 2 — 推荐
 

@@ -22,13 +22,13 @@ target_wiki_dir: "rag-retrieval"
 
 | # | 标题 | URL | Source | 说明 | Status |
 |---|------|-----|--------|------|--------|
-| 1 | Retrieval Augmented Generation (RAG) | https://docs.anthropic.com/en/docs/build-with-claude/retrieval-augmented-generation | Anthropic | 官方 RAG 指南，权威起点 | ⬜ |
-| 2 | Building RAG-based LLM Applications | https://www.anyscale.com/blog/a-comprehensive-guide-for-building-rag-based-llm-applications-part-1 | Anyscale | 端到端 RAG 构建指南 | ⬜ |
-| 3 | Pinecone: What is RAG? | https://www.pinecone.io/learn/retrieval-augmented-generation/ | Pinecone | 清晰的 RAG 概念讲解 + 架构图 | ⬜ |
-| 4 | Chunking Strategies for RAG | https://www.pinecone.io/learn/chunking-strategies/ | Pinecone | Chunking 策略对比和最佳实践 | ⬜ |
-| 5 | A Guide to Embeddings | https://simonwillison.net/2023/Oct/23/embeddings/ | Simon Willison | 工程师视角的 embedding 入门 | ⬜ |
-| 6 | Contextual Retrieval | https://www.anthropic.com/news/contextual-retrieval | Anthropic | Anthropic 的 contextual retrieval 方法 | ⬜ |
-| 7 | Patterns for Building LLM-based Systems | https://eugeneyan.com/writing/llm-patterns/ | Eugene Yan | LLM 系统模式总览，RAG 在全局中的位置 | ⬜ |
+| 1 | Retrieval Augmented Generation (RAG) | https://docs.anthropic.com/en/docs/build-with-claude/retrieval-augmented-generation | Anthropic | 官方 RAG 指南，权威起点 | ✅ |
+| 2 | Building RAG-based LLM Applications | https://www.anyscale.com/blog/a-comprehensive-guide-for-building-rag-based-llm-applications-part-1 | Anyscale | 端到端 RAG 构建指南 | ✅ |
+| 3 | Pinecone: What is RAG? | https://www.pinecone.io/learn/retrieval-augmented-generation/ | Pinecone | 清晰的 RAG 概念讲解 + 架构图 | ✅ |
+| 4 | Chunking Strategies for RAG | https://www.pinecone.io/learn/chunking-strategies/ | Pinecone | Chunking 策略对比和最佳实践 | ✅ |
+| 5 | A Guide to Embeddings | https://simonwillison.net/2023/Oct/23/embeddings/ | Simon Willison | 工程师视角的 embedding 入门 | ✅ |
+| 6 | Contextual Retrieval | https://www.anthropic.com/news/contextual-retrieval | Anthropic | Anthropic 的 contextual retrieval 方法 | ✅ |
+| 7 | Patterns for Building LLM-based Systems | https://eugeneyan.com/writing/llm-patterns/ | Eugene Yan | LLM 系统模式总览，RAG 在全局中的位置 | ✅ |
 
 ## Tier 2 — 推荐
 

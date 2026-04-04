@@ -10,10 +10,19 @@
 - [AIG](aig.md) — Agent Interaction Guidelines
 - [RAG](rag.md) — Retrieval-Augmented Generation
 
+**ML/DL 基础**
+- [Transformer](transformer.md) — 基于 attention 的序列建模架构
+- [KV Cache](kv-cache.md) — 自回归推理的 Key/Value 缓存优化
+- [Embeddings](embeddings.md) — 文本到稠密向量的映射
+
 **协议与工具**
 - [MCP](mcp.md) — Model Context Protocol
 - [Deferred Tools](deferred-tools.md) — 延迟加载工具机制
 - [LSP](lsp.md) — Language Server Protocol
+
+**推理优化**
+- [Continuous Batching](continuous-batching.md) — 动态批处理，iteration-level scheduling
+- [PagedAttention](paged-attention.md) — KV Cache 的非连续内存管理
 
 **工作流与框架**
 - [gstack](gstack.md) — Garry Tan 的 Claude Code 角色化工作流

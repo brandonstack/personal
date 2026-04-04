@@ -26,4 +26,5 @@ LLM 的知识有截止日期，也不知道你的私有数据。RAG 的做法是
 
 wiki 中提到 RAG 主要是与 Agent 的知识管理对比：RAG 是"被动检索"，Agent + 知识库（如 Compound Engineering）是"主动积累"。两者互补但解决不同问题。
 
-→ 深度阅读：[llm-knowledge-bases](../knowledge-management/llm-knowledge-bases.md)
+→ 深度阅读：[rag-retrieval/rag-pipeline](../rag-retrieval/rag-pipeline.md) — 完整 RAG 技术栈
+→ 深度阅读：[llm-knowledge-bases](../knowledge-management/llm-knowledge-bases.md) — RAG vs 知识积累

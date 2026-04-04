@@ -22,14 +22,14 @@ target_wiki_dir: "ml-fundamentals"
 
 | # | 标题 | URL | Source | 说明 | Status |
 |---|------|-----|--------|------|--------|
-| 1 | The Illustrated Transformer | https://jalammar.github.io/illustrated-transformer/ | Jay Alammar | 最佳 Transformer 可视化讲解，必读经典 | ⬜ |
-| 2 | The Illustrated GPT-2 | https://jalammar.github.io/illustrated-gpt2/ | Jay Alammar | 从 Transformer 到 GPT，可视化解读 | ⬜ |
-| 3 | Visualizing Attention | https://jalammar.github.io/visualizing-neural-machine-translation-mechanics-of-seq2seq-models-with-attention/ | Jay Alammar | Attention 机制的直觉理解 | ⬜ |
-| 4 | Neural Networks: Zero to Hero (intro) | https://karpathy.ai/zero-to-hero.html | Andrej Karpathy | Karpathy 经典课程主页，从零构建 neural net | ⬜ |
-| 5 | Let's build GPT: from scratch | https://www.youtube.com/watch?v=kCc8FmEb1nY | Andrej Karpathy | 2h 手把手从零构建 GPT，必看 | ⬜ |
-| 6 | What is a Transformer? | https://blogs.nvidia.com/blog/what-is-a-transformer-model/ | NVIDIA | 工程视角的 Transformer 概述 | ⬜ |
-| 7 | Attention Is All You Need (论文) | https://arxiv.org/abs/1706.03762 | Vaswani et al. | 原始论文，至少读 abstract + architecture 图 | ⬜ |
-| 8 | Hugging Face NLP Course — Transformers | https://huggingface.co/learn/nlp-course/chapter1 | Hugging Face | 实操向的 Transformer 入门课程 | ⬜ |
+| 1 | The Illustrated Transformer | https://jalammar.github.io/illustrated-transformer/ | Jay Alammar | 最佳 Transformer 可视化讲解，必读经典 | ✅ |
+| 2 | The Illustrated GPT-2 | https://jalammar.github.io/illustrated-gpt2/ | Jay Alammar | 从 Transformer 到 GPT，可视化解读 | ✅ |
+| 3 | Visualizing Attention | https://jalammar.github.io/visualizing-neural-machine-translation-mechanics-of-seq2seq-models-with-attention/ | Jay Alammar | Attention 机制的直觉理解 | ✅ |
+| 4 | Neural Networks: Zero to Hero (intro) | https://karpathy.ai/zero-to-hero.html | Andrej Karpathy | Karpathy 经典课程主页，从零构建 neural net | ✅ |
+| 5 | Let's build GPT: from scratch | https://www.youtube.com/watch?v=kCc8FmEb1nY | Andrej Karpathy | 2h 手把手从零构建 GPT，必看 | ✅ |
+| 6 | What is a Transformer? | https://blogs.nvidia.com/blog/what-is-a-transformer-model/ | NVIDIA | 工程视角的 Transformer 概述 | ✅ |
+| 7 | Attention Is All You Need (论文) | https://arxiv.org/abs/1706.03762 | Vaswani et al. | 原始论文，至少读 abstract + architecture 图 | ✅ |
+| 8 | Hugging Face NLP Course — Transformers | https://huggingface.co/learn/nlp-course/chapter1 | Hugging Face | 实操向的 Transformer 入门课程 | ✅ |
 
 ## Tier 2 — 推荐
 
