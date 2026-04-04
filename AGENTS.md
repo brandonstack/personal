@@ -14,6 +14,7 @@
 - wiki 内容必须标注来源（resources 文件或对话日期）
 - 更新 wiki 时同步更新 `_index.md`
 - wiki 文件是概念文档，不是文章摘要
+- 更新 wiki 或 compile 时，检查文章中引用的术语是否已在 `wiki/glossary/` 有条目，缺失则补充
 
 ### Areas 写入
 - `areas/` 仍然是用户确认过的内容
