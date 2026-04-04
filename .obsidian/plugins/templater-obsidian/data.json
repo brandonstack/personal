@@ -1,5 +1,5 @@
 {
-  "templates_folder": "templates",
+  "templates_folder": ".obsidian/templates",
   "templates_pairs": [],
   "trigger_on_file_creation": true,
   "auto_jump_to_cursor": true,
@@ -10,11 +10,11 @@
   "folder_templates": [
     {
       "folder": "journal/daily",
-      "template": "templates/daily.md"
+      "template": ".obsidian/templates/daily.md"
     },
     {
       "folder": "journal/weekly",
-      "template": "templates/weekly.md"
+      "template": ".obsidian/templates/weekly.md"
     }
   ],
   "syntax_highlighting": true,

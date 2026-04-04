@@ -24,14 +24,14 @@ Skills 是 Claude Code 的控制层核心——`.claude/commands/` 下的 markdo
 
 ```yaml
 ---
-description: 当需要批量处理 inbox 文件并更新 wiki 时使用
+description: 当需要批量处理 resources/pending 文件并更新 wiki 时使用
 ---
 ```
 
 而不是：
 ```yaml
 ---
-description: 一个用来消化 inbox 文件的工具
+description: 一个用来消化 resources/pending 文件的工具
 ---
 ```
 

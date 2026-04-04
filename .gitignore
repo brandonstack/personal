@@ -3,7 +3,7 @@ __pycache__/
 *.pyc
 
 # === Scripts runtime state ===
-scripts/ingest/state/
+.ingest/state/
 
 # === Claude Code ===
 .claude/settings.local.json

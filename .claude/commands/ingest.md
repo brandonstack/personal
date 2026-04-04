@@ -1,6 +1,6 @@
 ---
 allowed-tools: Read, Write, Edit, Bash(mv:*), Bash(rm:*)
-description: Reformat and compress an inbox file — restructure content, improve information density, and rename to standard format
+description: Reformat and compress a pending file — restructure content, improve information density, and rename to standard format
 ---
 
 ## Input
@@ -10,8 +10,8 @@ $ARGUMENTS
 ## Your task
 
 Determine the input type:
-- **If the input is a file path** (e.g. `inbox/foo.md`): Read the file and process its content.
-- **If the input is raw text**: Use the text directly as the content to process. Create a new file in `inbox/`.
+- **If the input is a file path** (e.g. `resources/pending/foo.md`): Read the file and process its content.
+- **If the input is raw text**: Use the text directly as the content to process. Create a new file in `resources/pending/`.
 
 Then do the following steps in order:
 
@@ -45,9 +45,9 @@ If the file already has frontmatter, keep and update it. If `date` is missing, i
 
 ### 4. Rename to standard format
 
-Rename the file to match the inbox naming convention:
+Rename the file to match the pending naming convention:
 ```
-inbox/<YYYYMMDD>-<title-slug>.md
+resources/pending/<YYYYMMDD>-<title-slug>.md
 ```
 
 - `YYYYMMDD`: the date from frontmatter or filename

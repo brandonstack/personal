@@ -1,6 +1,6 @@
 ---
 allowed-tools: Read, Write, Edit, Glob, Grep, Bash(mv:*), Bash(mkdir:*)
-description: 批量消化 inbox 文件 — LLM 全权更新 wiki 知识库并生成 report 供用户审阅
+description: 批量消化 pending 文件 — LLM 全权更新 wiki 知识库并生成 report 供用户审阅
 ---
 
 ## Input
@@ -8,14 +8,14 @@ description: 批量消化 inbox 文件 — LLM 全权更新 wiki 知识库并生
 $ARGUMENTS
 
 输入可以是：
-- 具体文件路径（空格分隔多个）：`inbox/anthropic/20260328-harness-design.md inbox/openai/20260211-harness-engineering.md`
-- glob 模式：`inbox/clippings/*.md`
-- 主题关键词：`harness`（自动匹配相关 inbox 文件）
-- `--all`：处理所有未编译的 inbox 文件（按主题自动分批）
+- 具体文件路径（空格分隔多个）：`resources/pending/anthropic/20260328-harness-design.md resources/pending/openai/20260211-harness-engineering.md`
+- glob 模式：`resources/pending/clippings/*.md`
+- 主题关键词：`harness`（自动匹配相关 pending 文件）
+- `--all`：处理所有未编译的 pending 文件（按主题自动分批）
 
 ## Your task
 
-批量消化 inbox 文件，更新 wiki 知识库，生成 report 供用户审阅。
+批量消化 pending 文件，更新 wiki 知识库，生成 report 供用户审阅。
 
 Follow these steps in order:
 
@@ -24,8 +24,8 @@ Follow these steps in order:
 根据输入类型：
 - **文件路径**：直接使用
 - **glob**：Glob 匹配
-- **关键词**：Grep 搜索 inbox/ 下所有 .md 文件的标题、tags、正文
-- **--all**：Glob `inbox/**/*.md`，按标题/tags 聚类分批
+- **关键词**：Grep 搜索 resources/pending/ 下所有 .md 文件的标题、tags、正文
+- **--all**：Glob `resources/pending/**/*.md`，按标题/tags 聚类分批
 
 过滤规则：
 - 跳过 `status: compiled` 的文件
@@ -42,7 +42,7 @@ Follow these steps in order:
 
 ### 3. 逐篇消化 + 提取知识
 
-读取每篇 inbox 文件，提取：
+读取每篇 pending 文件，提取：
 - **概念**：可独立成文的知识点、框架、模式
 - **实践**：具体做法、工具用法、workflow
 - **观点**：作者的判断、立场、预测
@@ -77,14 +77,14 @@ Follow these steps in order:
 
 ### 6. 生成 report
 
-写入 `reports/YYYYMMDD-<topic-slug>.md`：
+写入 `wiki/reports/YYYYMMDD-<topic-slug>.md`：
 
 ```markdown
 ---
 date: "YYYY-MM-DD"
 sources:
-  - inbox/xxx/yyy.md
-  - inbox/xxx/zzz.md
+  - resources/pending/xxx/yyy.md
+  - resources/pending/xxx/zzz.md
 wiki_updated:
   - wiki/topic/file.md
   - wiki/topic/new-file.md
@@ -120,22 +120,22 @@ wiki_updated:
 <- 挑战性的，不是确认性的>
 ```
 
-### 7. 标记并移动 inbox 文件
+### 7. 标记并移动 pending 文件
 
-为每个处理过的 inbox 文件：
+为每个处理过的 pending 文件：
 
 **a) 更新 frontmatter**
 - 添加或修改 `status: "compiled"`
 - 如果文件没有 `status` 字段，在 frontmatter 中添加
 - 如果文件没有 frontmatter，添加最小 frontmatter：`status: "compiled"`
 
-**b) 移到 resources/**
-- 保持目录结构：`inbox/anthropic/xxx.md` → `resources/anthropic/xxx.md`
+**b) 移到 resources/ 对应主题目录**
+- 保持目录结构：`resources/pending/anthropic/xxx.md` → `resources/anthropic/xxx.md`
 - 如果目标目录不存在，先 `mkdir -p`
 - 同一来源的 `-zh.md` 翻译版本一起移动
 
 **c) 更新 wiki 引用路径**
-- 把本批 wiki 文件中的 `> 来源：inbox/xxx` 更新为 `> 来源：resources/xxx`
+- 把本批 wiki 文件中的 `> 来源：resources/pending/xxx` 更新为 `> 来源：resources/xxx`
 - 更新 report 中的 sources 路径（frontmatter + 正文）
 
 ### 8. 输出
@@ -146,7 +146,7 @@ wiki_updated:
 - 邀请用户审阅完整 report 并开始对话
 
 ```
-📋 Report: reports/YYYYMMDD-<topic>.md
+📋 Report: wiki/reports/YYYYMMDD-<topic>.md
 📚 Wiki 更新：X 个文件更新，Y 个新建
 
 [显示关键洞察]

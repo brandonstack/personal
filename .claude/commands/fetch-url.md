@@ -17,13 +17,13 @@ If `--tags` is not provided, infer 2-3 relevant tags from the URL/domain.
 ### Step 1: Run the fetch + translate script
 
 ```bash
-python3 scripts/ingest/fetch-url.py <url> --source <SOURCE> --tags <TAGS> [--date <DATE>]
+python3 .ingest/fetch-url.py <url> --source <SOURCE> --tags <TAGS> [--date <DATE>]
 ```
 
 The script will:
 1. Fetch the article via fetch-skill (auto-routes: web → Jina Reader, Twitter → FxTwitter, WeChat → wechat-exporter, with fallback chain)
-2. Clean and save the original as `inbox/<source>/YYYYMMDD-<slug>.md`
-3. Translate to Chinese via `claude` CLI and save as `inbox/<source>/YYYYMMDD-<slug>-zh.md`
+2. Clean and save the original as `resources/pending/<source>/YYYYMMDD-<slug>.md`
+3. Translate to Chinese via `claude` CLI and save as `resources/pending/<source>/YYYYMMDD-<slug>-zh.md`
 
 The script outputs saved file paths to stdout (one per line).
 

@@ -60,7 +60,7 @@ Orchestrator
 
 ## 灵感来源
 
-- [OpenAI: Harness Engineering](../../inbox/openai/20260211-harness-engineering-original.md) — 0 行手写代码，人设计环境 + agent 执行
+- [OpenAI: Harness Engineering](../../resources/openai/20260211-harness-engineering-original.md) — 0 行手写代码，人设计环境 + agent 执行
 - [Anthropic: Building Effective Agents](https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering) — generator-evaluator 模式
 
 ---

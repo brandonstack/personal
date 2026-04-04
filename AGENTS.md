@@ -5,8 +5,8 @@
 ## Agent 行为准则
 
 ### 信息摄入
-- Feed 脚本（`scripts/ingest/`）是自动化工具，Agent 不主动运行
-- Agent 可以帮助 review inbox 内容、总结文章、提取要点
+- Feed 脚本（`.ingest/`）是自动化工具，Agent 不主动运行
+- Agent 可以帮助 review resources/pending 内容、总结文章、提取要点
 
 ### Wiki 维护
 - Agent 是 `wiki/` 的全权维护者 — 创建、修改、重组 wiki 文件无需用户逐条确认
@@ -24,10 +24,10 @@
 ### 文件操作
 - `wiki/` 下的文件：Agent 可自由创建、修改、删除、重组
 - `areas/` 下的文件：需要用户确认后操作
-- `inbox/` 下的文件：compile 时标记 `status: compiled` 后移到 `resources/`（保持目录结构）
-- `resources/` 下的文件：只读，不修改不删除
-- `reports/` 下的文件：Agent 创建新 report，不修改已有 report
-- 不要修改 `scripts/` 里的代码，除非用户要求
+- `resources/pending/` 下的文件：compile 时标记 `status: compiled` 后移到 `resources/`（保持目录结构）
+- `resources/` 下的已处理文件：只读，不修改不删除
+- `wiki/reports/` 下的文件：Agent 创建新 report，不修改已有 report
+- 不要修改 `.ingest/` 里的代码，除非用户要求
 
 ### 写作风格
 - 中英混用，技术术语保留英文

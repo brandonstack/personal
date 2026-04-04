@@ -10,7 +10,7 @@
 
 ```habittracker
 {
-  "path": "habits",
+  "path": "areas/habits",
   "daysToShow": 21
 }
 ```
@@ -50,18 +50,18 @@ SORT file.mtime DESC
 
 ---
 
-## Inbox
+## Pending
 
 > [!info] Unprocessed
 > ```dataview
 > TABLE source, date, tags
-> FROM "inbox"
+> FROM "resources/pending"
 > SORT date DESC
 > LIMIT 15
 > ```
 
 **Total unprocessed:**
-`$= dv.pages('"inbox"').length`
+`$= dv.pages('"resources/pending"').length`
 
 ---
 

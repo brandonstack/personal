@@ -4,9 +4,9 @@
 
 当前 PKM 系统有四个 skill（`/fetch-url`, `/digest`, `/ingest`, `/promote`）和 Python 脚本处理 RSS 摄入，但存在几个问题：
 
-1. **播客没有处理流程** — `sources.yaml` 里有 5 个播客源标了 `transcribe: true`，但没有转录脚本，inbox/podcast/ 里的文件只有 show notes，没有 transcript
-2. **Web clip 不规范** — `inbox/clippings/` 里文件命名混乱（中文标题、无日期前缀），frontmatter 不统一
-3. **没有自动评分/分类** — 所有内容进 inbox 后 status 永远是 raw，无法快速 triage
+1. **播客没有处理流程** — `sources.yaml` 里有 5 个播客源标了 `transcribe: true`，但没有转录脚本，resources/pending/podcast/ 里的文件只有 show notes，没有 transcript
+2. **Web clip 不规范** — `resources/pending/clippings/` 里文件命名混乱（中文标题、无日期前缀），frontmatter 不统一
+3. **没有自动评分/分类** — 所有内容进 resources/pending 后 status 永远是 raw，无法快速 triage
 4. **翻译时机不对** — `/fetch-url` 每次都翻译，但大部分 RSS 文章不会被读，浪费资源
 5. **没有触发机制** — 一切都是手动的，没有 cron，没有自动化
 
@@ -18,10 +18,10 @@
 
 ### 一、统一文件组织
 
-**保持 `inbox/<source>/` 结构不变**，用 frontmatter `type` 字段区分内容类型，不用目录区分。
+**保持 `resources/pending/<source>/` 结构不变**，用 frontmatter `type` 字段区分内容类型，不用目录区分。
 
 ```
-inbox/
+resources/pending/
 ├── <source>/                          # 按来源（不变）
 │   ├── YYYYMMDD-<slug>.md             # 主文件（原文或 show notes）
 │   ├── YYYYMMDD-<slug>-zh.md          # 中文翻译（可选）
@@ -77,10 +77,10 @@ transcript: "YYYYMMDD-slug.transcript.md"  # 指向转录文件
 
 | 类型 | 触发 | 产出 |
 |------|------|------|
-| RSS 文章 | cron → `feed-to-inbox.py` | `inbox/<source>/YYYYMMDD-slug.md` |
-| 手动文章 | 用户 `/fetch-url`（不再自动翻译） | `inbox/<source>/YYYYMMDD-slug.md` |
+| RSS 文章 | cron → `feed-to-inbox.py` | `resources/pending/<source>/YYYYMMDD-slug.md` |
+| 手动文章 | 用户 `/fetch-url`（不再自动翻译） | `resources/pending/<source>/YYYYMMDD-slug.md` |
 | 播客 | cron → `feed-to-inbox.py` 检测 podcast 类型 | stub `.md` + 异步 Whisper API 转录 |
-| Web clip | Obsidian Web Clipper 插件 | `inbox/clippings/<title>.md`（Clipper 格式） |
+| Web clip | Obsidian Web Clipper 插件 | `resources/pending/clippings/<title>.md`（Clipper 格式） |
 
 #### Stage 1: `/score`（NEW，自动化）
 
@@ -115,7 +115,7 @@ transcript: "YYYYMMDD-slug.transcript.md"  # 指向转录文件
 - **评分标准**: 内嵌在 skill prompt 里（见上方维度）
 
 #### ~~`/clip` — 不需要~~
-Web clip 由 Obsidian Web Clipper 插件完成，直接存入 `inbox/clippings/`。
+Web clip 由 Obsidian Web Clipper 插件完成，直接存入 `resources/pending/clippings/`。
 Clipper 产出的 frontmatter 格式不同（`title`, `source`, `author`, `published`, `created`, `description`, `tags: [clippings]`），`/score` 需要兼容。
 
 #### 新增 `/translate`
@@ -129,21 +129,21 @@ Clipper 产出的 frontmatter 格式不同（`title`, `source`, `author`, `publi
 - **文件**: `.claude/commands/triage.md`
 - **allowed-tools**: `Read, Write, Glob, Grep`
 - **输入**: 无
-- **行为**: 扫描所有 `status: scored` 的文件，按 score 排序，生成 `inbox/TRIAGE.md`
+- **行为**: 扫描所有 `status: scored` 的文件，按 score 排序，生成 `resources/pending/TRIAGE.md`
 
 #### 新增 `/sweep`
 - **文件**: `.claude/commands/sweep.md`
 - **allowed-tools**: `Read, Edit, Glob, Grep, Bash(mv:*), Bash(mkdir:*)`
 - **输入**: 无（或 `--dry-run`）
 - **行为**:
-  - `score < 0.3` 且 >14 天 → 移入 `inbox/_archive/`
+  - `score < 0.3` 且 >14 天 → 移入 `resources/pending/_archive/`
   - `scored` 状态超 3 天且 `score > 0.7` → 在 TRIAGE.md 标注提醒
   - 汇报统计数据
 
 #### 修改 `/digest`
 - 识别 `type: podcast` → 读取 `.transcript.md` → 额外生成关键引述+时间戳
 
-#### 新增 `scripts/ingest/transcribe.py`
+#### 新增 `.ingest/transcribe.py`
 - **输入**: 播客 stub 文件路径（读取 `audio` 字段）
 - **行为**: 下载音频 → Whisper API (OpenAI/Azure) 转录 → 写 `.transcript.md` → 更新 stub frontmatter
 - **方案**: Whisper API（在职期间用 Azure 额度，离职后用 OpenAI API key）
@@ -174,10 +174,10 @@ Clipper 产出的 frontmatter 格式不同（`title`, `source`, `author`, `publi
 ```bash
 # crontab 条目
 # RSS 摄入 + 评分 + triage（每4小时）
-0 */4 * * * cd /path/to/personal && python3 scripts/ingest/feed-to-inbox.py --hours 4 && claude --print "对 inbox 里所有 status: raw 的文件运行 /score，然后运行 /triage"
+0 */4 * * * cd /path/to/personal && python3 .ingest/feed-to-inbox.py --hours 4 && claude --print "对 resources/pending 里所有 status: raw 的文件运行 /score，然后运行 /triage"
 
 # 播客转录（每6小时）
-0 */6 * * * cd /path/to/personal && python3 scripts/ingest/transcribe.py
+0 */6 * * * cd /path/to/personal && python3 .ingest/transcribe.py
 
 # 每日清理（早6点）
 0 6 * * * cd /path/to/personal && claude --print "/sweep 然后 /triage"
@@ -196,12 +196,12 @@ Clipper 产出的 frontmatter 格式不同（`title`, `source`, `author`, `publi
 - Web Clipper 产出的：`title`, `source`, `author`, `published`, `created`, `description`, `tags: [clippings]`
 
 #### Phase 2: 播客管线（下周）
-5. 创建 `scripts/ingest/transcribe.py`（Whisper API）
+5. 创建 `.ingest/transcribe.py`（Whisper API）
 6. 修改 `feed-to-inbox.py` 支持播客 stub 创建
 7. 增强 `/digest` 支持播客类型
 
 #### Phase 3: 自动化（5 月）
-8. 创建 `/triage` skill + `inbox/TRIAGE.md`
+8. 创建 `/triage` skill + `resources/pending/TRIAGE.md`
 9. 创建 `/sweep` skill
 10. 配置 cron jobs
 11. 在 Dashboard.md 加 triage 视图（Dataview 查询 scored 文件）
@@ -219,19 +219,19 @@ Clipper 产出的 frontmatter 格式不同（`title`, `source`, `author`, `publi
 | 新建 | `.claude/commands/translate.md` |
 | 新建 | `.claude/commands/triage.md` |
 | 新建 | `.claude/commands/sweep.md` |
-| 新建 | `scripts/ingest/transcribe.py` |
+| 新建 | `.ingest/transcribe.py` |
 | 修改 | `.claude/commands/digest.md` — 增加播客支持 |
 | 修改 | `.claude/commands/fetch-url.md` — 默认不翻译，翻译改为调 /translate |
-| 修改 | `scripts/ingest/feed-to-inbox.py` — 支持播客 stub |
+| 修改 | `.ingest/feed-to-inbox.py` — 支持播客 stub |
 | 修改 | `CLAUDE.md` — 更新 workflow 文档 |
 | 修改 | `projects/pkm-polish/README.md` — 更新项目进度 |
 | 修改 | `Dashboard.md` — 加 triage 视图（可选） |
 
 ### 八、验证方式
 
-1. **`/score` 测试 (fetch-url 格式)**: 对现有 inbox 文件运行 `/score inbox/anthropic/20260328-harness-design-long-running-apps.md`，验证 score/summary/topics 写入 frontmatter
-2. **`/score` 测试 (Web Clipper 格式)**: 对 clippings 文件运行 `/score "inbox/clippings/Agent Interaction Guidelines (AIG) – Linear Developers.md"`，验证兼容 Clipper frontmatter
-3. **`/translate` 测试**: 对一个未翻译的文件运行 `/translate inbox/clippings/...`，验证 `-zh.md` 生成
+1. **`/score` 测试 (fetch-url 格式)**: 对现有 pending 文件运行 `/score resources/pending/anthropic/20260328-harness-design-long-running-apps.md`，验证 score/summary/topics 写入 frontmatter
+2. **`/score` 测试 (Web Clipper 格式)**: 对 clippings 文件运行 `/score "resources/pending/clippings/Agent Interaction Guidelines (AIG) – Linear Developers.md"`，验证兼容 Clipper frontmatter
+3. **`/translate` 测试**: 对一个未翻译的文件运行 `/translate resources/pending/clippings/...`，验证 `-zh.md` 生成
 4. **`/fetch-url` 回归测试**: 运行 `/fetch-url <url>`，验证不再自动翻译
 5. **播客转录测试**: 手动对一个 podcast stub 运行 `transcribe.py`，验证 `.transcript.md` 生成
 6. **`/digest` 播客测试**: 对有 transcript 的播客运行 `/digest`，验证生成关键引述+时间戳

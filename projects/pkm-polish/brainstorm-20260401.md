@@ -8,7 +8,7 @@
   ├── Kirby/Agent（自动化/对话/处理）
   ├── 提醒服务（读 TODO → 推通知）
   ├── Dashboard（读状态 → 可视化）
-  ├── RSS 视图（读 inbox → 阅读体验）
+  ├── RSS 视图（读 resources/pending → 阅读体验）
   └── 未来任何新工具（都只读写文本）
 ```
 
@@ -22,7 +22,7 @@
 ## Agent vs UI 分工
 
 **Agent 适合做的（后台、异步、处理型）：**
-- feed 自动摄入（定时拉、去重、写 inbox）
+- feed 自动摄入（定时拉、去重、写 resources/pending）
 - digest 生成（总结、提问、关联发现）
 - 对话沉淀（聊天中有价值的内容写回 repo）
 - 搜索查找、文件操作、commit/push
@@ -32,7 +32,7 @@
 **UI 适合做的（浏览、选择、快速交互型）：**
 - RSS 阅读（扫标题、快速筛选）
 - 待办管理（勾选、排序）
-- inbox 分拣（标记 digest/跳过）
+- pending 分拣（标记 digest/跳过）
 - 习惯追踪可视化
 - 项目看板
 
@@ -65,7 +65,7 @@
 ### 硬件方向
 1. **智能音箱/树莓派** — 自建语音助手，"Kirby 今天有什么安排"
 2. **手表通知** — Apple Watch 推飞书通知（现在就能做）
-3. **墨水屏** — 桌面小屏显示待办/习惯/inbox 状态
+3. **墨水屏** — 桌面小屏显示待办/习惯/pending 状态
 4. **车载语音** — 自驾中的语音交互
 5. **AR 眼镜** — 未来方向
 
@@ -91,7 +91,7 @@
 - 健康日志（追踪趋势）
 
 ### 信息代理
-- 收到链接 → 抓取、翻译、digest、存 inbox
+- 收到链接 → 抓取、翻译、digest、存 resources/pending
 - 调研任务 → 后台做功课，整理好发给你
 - 邮件/日历管理
 
@@ -174,11 +174,11 @@ App 不拥有数据，只是纯文本的视图层。很好的简历项目。
 - Obsidian 已在 App Store，插件直接本地加载，零发布成本
 
 Kirby Plugin 可以做的功能：
-- 今日 Dashboard（待办、inbox 数量、项目状态）
+- 今日 Dashboard（待办、resources/pending 数量、项目状态）
 - 一键 digest（调 Agent API 或直接调 LLM）
 - 习惯打卡面板
 - 番茄钟
-- inbox 浏览和分拣
+- pending 浏览和分拣
 
 做好了可以开源到 Obsidian 社区，"AI-powered personal OS plugin" 在社区有吸引力。
 
@@ -223,8 +223,8 @@ Kirby Plugin 可以做的功能：
 
 ### 与纯文本架构的结合方式
 
-1. **Daily Dashboard**（Dataview + Homepage + Templater）— 打开 Obsidian 看到今日待办、inbox 数量、习惯完成率、项目进度
-2. **RSS 阅读**（RSS Dashboard）— 直接在 Obsidian 浏览 feed，一键保存到 inbox/
+1. **Daily Dashboard**（Dataview + Homepage + Templater）— 打开 Obsidian 看到今日待办、resources/pending 数量、习惯完成率、项目进度
+2. **RSS 阅读**（RSS Dashboard）— 直接在 Obsidian 浏览 feed，一键保存到 resources/pending/
 3. **习惯追踪**（Habit Tracker + Tracker）— daily note 打勾，月底自动出趋势图
 4. **番茄钟**（Pomodoro Timer）— 学习时用，记录自动写入笔记
 5. **Git 同步**（Obsidian Git）— Agent 改文件 → push → Obsidian 5分钟内 pull

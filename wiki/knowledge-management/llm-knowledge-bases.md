@@ -55,7 +55,7 @@ omarsar0 的实践扩展了 Karpathy 模式：
 LLM Knowledge Base 模式和 Claude Code 生态中的 Compound Engineering（CE）是同一思想在不同层面的实现：
 - CE `/ce:compound`：从代码 session 中提取可复用知识 → docs/solutions/
 - Karpathy 模式：从研究材料中编译知识 → wiki/
-- 本 repo 的 `/compile`：从 inbox 中消化知识 → wiki/ + reports/
+- 本 repo 的 `/compile`：从 `resources/pending` 中消化知识 → `wiki/` + `wiki/reports/`
 
 共同点：每次交互都让知识 compound，Agent 不只产出结果，还产出可复用知识。
 

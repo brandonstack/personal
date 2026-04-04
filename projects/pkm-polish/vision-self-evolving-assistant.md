@@ -158,7 +158,7 @@ Agent 负责整理、分类、digest。你的唯一工作是"扔进来"。
 ### Agent vs UI 分工
 
 **Agent 做的（后台、异步、智能型）**：
-- Feed 自动摄入（定时拉、去重、写 inbox）
+- Feed 自动摄入（定时拉、去重、写 resources/pending）
 - Digest 生成（总结、提问、关联发现）
 - 对话沉淀（聊天中有价值的内容写回 repo）
 - 主动推送（发现相关内容时通知）

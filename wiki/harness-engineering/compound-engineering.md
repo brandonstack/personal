@@ -66,7 +66,7 @@ CE 作者刻意选择不在全自动流程（/lfg）中包含 compound 步骤：
 
 ## 与本 Repo 的关系
 
-本 repo 的 wiki 模式（inbox → LLM 消化 → wiki 知识库 → 对话回流）本质上就是 Compound Engineering 在个人知识管理中的实践：每次消化都增强知识库，知识 compound。
+本 repo 的 wiki 模式（resources/pending → LLM 消化 → wiki 知识库 → 对话回流）本质上就是 Compound Engineering 在个人知识管理中的实践：每次消化都增强知识库，知识 compound。
 
 → [harness-generations.md](harness-generations.md) — 记忆治理是 Harness 三支柱之一
 → [evaluator-generator.md](evaluator-generator.md) — 评估闭环支柱

@@ -46,8 +46,35 @@
 - [ ] Claude Agent SDK 文档通读 + 官方 examples 跑一遍
 - [ ] Anthropic Building Effective Agents 指南精读
 - [ ] 评估方法论：LMSYS Chatbot Arena、Anthropic eval 框架
-- [ ] 每周 2-3 篇 AI 工程文章（inbox 习惯）
+- [ ] 每周 2-3 篇 AI 工程文章（resources/pending 阅读习惯）
 - [ ] Claude Code 工具探索：`/rewind`、`/loop`、`/branch` 实际试用
+
+## 五、Knowledge Sprint（大规模主题摄入）
+
+按 topic 策划高质量资源列表 → 批量 fetch → compile → wiki。覆盖转型所需的基础知识 + 主线深化。
+
+| Topic | 预算 | URLs | Status | 详情 |
+|-------|------|------|--------|------|
+| ML/DL Fundamentals | 25h | 14 | curating | [→](topics/ml-fundamentals.md) |
+| RAG & Retrieval | 15h | 12 | curating | [→](topics/rag-retrieval.md) |
+| AI Eval & Safety | 15h | 12 | curating | [→](topics/ai-eval-safety.md) |
+| Agent SDK & Harness | 20h | 13 | curating | [→](topics/agent-harness.md) |
+| AI Infra & Deployment | 15h | 12 | curating | [→](topics/ai-infra.md) |
+
+Sprint 工作流和进度总览见 [topics/_index.md](topics/_index.md)
+
+### 批量 fetch
+
+```bash
+# 单 topic Tier 1
+python3 .ingest/batch-fetch.py projects/ai-learning/topics/ml-fundamentals.md --tier 1
+
+# 单 topic 全部
+python3 .ingest/batch-fetch.py projects/ai-learning/topics/ml-fundamentals.md
+
+# 全部 topics Tier 1（dry run 预览）
+python3 .ingest/batch-fetch.py projects/ai-learning/topics/*.md --tier 1 --dry-run
+```
 
 ## 时间线
 
@@ -57,8 +84,20 @@
 | 自驾期 | 7-8月 | 放松为主，碎片输入 |
 | 求职期 | 9月起 | 集中求职，项目持续完善 |
 
+### Sprint 推荐顺序（融入 30% 基础时间）
+
+| Week | Topic | 说明 |
+|------|-------|------|
+| 1-2 | ML/DL Fundamentals | 先打地基 |
+| 3-4 | RAG & Retrieval | 最可实操 |
+| 5-6 | AI Eval & Safety | 核心定位 |
+| 7-8 | Agent SDK & Harness | 有了新基础后再深化 |
+| 9-10 | AI Infra & Deployment | 运维侧，最后补 |
+| 11+ | 查漏补缺、二次 compile | |
+
 详细 action plan 见 [areas/career/action-plan-apr-jul.md](../../areas/career/action-plan-apr-jul.md)
 
 ---
 
 *Created: 2026-04-02*
+*Updated: 2026-04-04 — 新增 Knowledge Sprint*

@@ -8,35 +8,36 @@
 
 ```
 personal/
-├── inbox/             # 未处理的输入队列（自动摄入 + 手动 fetch），compiled 后移到 resources/
+├── resources/
+│   ├── pending/       # 未处理的输入队列（自动摄入 + 手动 fetch），compiled 后移到 resources/
+│   └── <topic>/       # 已处理的参考资料（compiled 后的原文存档，被 wiki 和 areas 引用）
 ├── wiki/              # LLM 全权维护的知识库（概念原子化，按主题分目录）
 │   ├── _index.md      # 全局索引（LLM 维护）
+│   ├── reports/       # LLM 生成的消化报告（供用户审阅和对话）
 │   └── <topic>/       # 按主题分目录（如 harness-engineering/, claude-code/）
 │       └── _index.md  # 子目录索引（LLM 维护）
-├── reports/           # LLM 生成的消化报告（供用户审阅和对话）
-├── resources/         # 已处理的参考资料（inbox compiled 后移入，原文存档，被 wiki 和 areas 引用）
-├── areas/             # 长期持续的个人生活领域（career, finance, health, travel, learning, home）
+├── areas/             # 长期持续的个人生活领域（career, finance, health, travel, learning, home, habits）
 ├── projects/          # 有明确目标的项目（完成后归档到 archive/）
 ├── archive/           # 已完成项目归档
-└── scripts/
-    └── ingest/        # Feed 摄入脚本
-        ├── sources.yaml       # 订阅源配置
-        ├── sync-feeds.py      # 同步 sources → feed CLI DB
-        ├── feed-to-inbox.py   # 拉取 entries → inbox/<source>/
-        └── fetch-url.py       # 单篇 URL 抓取（Jina Reader）
+├── journal/           # 日记
+└── .ingest/           # Feed 摄入脚本（隐藏目录）
+    ├── sources.yaml       # 订阅源配置
+    ├── sync-feeds.py      # 同步 sources → feed CLI DB
+    ├── feed-to-inbox.py   # 拉取 entries → resources/pending/<source>/
+    └── fetch-url.py       # 单篇 URL 抓取（Jina Reader）
 ```
 
 ## Feed Ingestion
 
 ```bash
 # 同步订阅源到 feed CLI
-python3 scripts/ingest/sync-feeds.py --fetch
+python3 .ingest/sync-feeds.py --fetch
 
-# 摄入最近 24h 文章到 inbox/
-python3 scripts/ingest/feed-to-inbox.py --hours 24
+# 摄入最近 24h 文章到 resources/pending/
+python3 .ingest/feed-to-inbox.py --hours 24
 
 # Dry run（不写文件）
-python3 scripts/ingest/feed-to-inbox.py --dry-run --hours 48
+python3 .ingest/feed-to-inbox.py --dry-run --hours 48
 ```
 
 依赖：`pyyaml`，`feed` CLI（Go）
@@ -48,16 +49,16 @@ python3 scripts/ingest/feed-to-inbox.py --dry-run --hours 48
 /fetch-url <url> --source SOURCE --tags tag1,tag2
 
 # 仅抓取原文（不翻译）
-python3 scripts/ingest/fetch-url.py <url> --source SOURCE --tags tag1,tag2 [--date YYYY-MM-DD] [--no-translate] [--dry-run]
+python3 .ingest/fetch-url.py <url> --source SOURCE --tags tag1,tag2 [--date YYYY-MM-DD] [--no-translate] [--dry-run]
 ```
 
-产出两个文件：`inbox/<source>/YYYYMMDD-<slug>.md`（原文）+ `-zh.md`（中文翻译+summary+comments）。
+产出两个文件：`resources/pending/<source>/YYYYMMDD-<slug>.md`（原文）+ `-zh.md`（中文翻译+summary+comments）。
 使用 fetch-skill 自动路由抓取：普通网页（Jina Reader + fallback）、Twitter/X（FxTwitter）、微信公众号（wechat-exporter）。
 fetch-skill 未安装时自动降级为 Jina Reader。
 
-## Inbox Note Format
+## Pending Note Format
 
-文件路径：`inbox/<source-slug>/YYYYMMDD-<title-slug>.md`
+文件路径：`resources/pending/<source-slug>/YYYYMMDD-<title-slug>.md`
 
 ```yaml
 ---
@@ -73,8 +74,8 @@ status: "raw"
 
 ## Workflow
 
-1. Feed 脚本 / fetch-url 摄入 → `inbox/`
-2. `/compile` — LLM 批量消化 inbox 文件 → 更新 `wiki/` + 生成 `reports/` + 移到 `resources/`
+1. Feed 脚本 / fetch-url 摄入 → `resources/pending/`
+2. `/compile` — LLM 批量消化 pending 文件 → 更新 `wiki/` + 生成 `wiki/reports/` + 移到 `resources/`
 3. 用户审阅 report → 对话讨论 → 有价值的内容回流到 `wiki/` 或 `areas/`
 4. 每次对话都可能增强 wiki（复合效应）
 
@@ -101,10 +102,10 @@ status: "raw"
 
 ## Key Rules
 
-- `inbox/` 是待处理的输入队列，compiled 后出队移到 `resources/`
-- `resources/` 是已处理的原文参考（从 inbox 毕业），被 wiki 和 areas 引用
+- `resources/pending/` 是待处理的输入队列，compiled 后移到 `resources/` 对应主题目录
+- `resources/` 是参考资料库（pending = 未处理，其余 = 已处理原文存档），被 wiki 和 areas 引用
 - `wiki/` 是 LLM 维护的知识库，概念原子化，跨来源综合
-- `reports/` 是消化报告，供用户审阅和对话
+- `wiki/reports/` 是消化报告，供用户审阅和对话
 - `areas/` 和 `projects/` 是人确认过的个人内容
 - Markdown 文件中英混用，保持自然
 
