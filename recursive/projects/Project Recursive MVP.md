@@ -11,7 +11,11 @@
 				- E: Obsidian无法native和AI进行integration。我们需要一些inline的edit和补全功能
 				- E: Obsidian是纯文本，可以跟Claude Code, Codex等等写作。
 				- E: 我们可以创建一些claude code skills来暂时与AI集成，并且可以复用。
-				- E：Obsidian有现成的编辑器等等内容，我们只需要专注于核心的用户故事和交互即可
+					- Q: 我们可以在obisidian里面调用claude code吗？可以内置terminal吗？或者我们可以不打开第二个软件就写作吗？one click to skills? 需要什么呢？
+						- E: 应该可以的。TBD. 
+				- E：Obsidian有现成的编辑器等等内容，我们只需要专注于核心的用户故事和交互即可，等验证完成之后，可以在继续往后走。effort是最少的。
+					- E: 重建一个应用可能会分散现在的注意力
+				- E: obsidian需要我们自己去创建bullet points, 创建Q, E, T，无法自动更新gaps和更新状态
 	- Initiative?
 		- Q: 这个项目的出发点是？
 			- E: 这个项目是为了
