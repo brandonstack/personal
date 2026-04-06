@@ -1,8 +1,10 @@
 ## Deliverable
-
 - 一个可用的 Q-E-T-D demo 原型
 
 ## Questions
+
+- Q: Recursive MVP怎么做？
+	- 
 
 - Q: 用什么技术栈做 MVP？
 	- E: Obsidian 有 Outliner 插件，可以模拟树结构
